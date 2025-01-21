@@ -1,5 +1,5 @@
 <h1 align="center">Hello 👋, I'm Narasimha Royal</h1>
-<h3 align="center">Passionate Web Developer | TX, USA</h3>
+<h3 align="center">Passionate Programmer | TX, USA</h3>
 
 <img align="right" alt="coding" width="400" src="https://i.pinimg.com/originals/81/17/8b/81178b47a8598f0c81c4799f2cdd4057.gif">
 
