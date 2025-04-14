@@ -12,7 +12,7 @@ jobs:
       - name: Generate GitHub Snake SVG
         uses: Platane/snk@v3
         with:
-          github_user_name: narasimha31
+          github_user_name: narasimha-31
           svg_out_path: dist/github-contribution-grid-snake.svg
 
       - name: Push to GitHub Pages branch
