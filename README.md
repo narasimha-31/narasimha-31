@@ -1,7 +1,7 @@
 <h1 align="center">Hello Folks 👋, I'm Narasimha Royal</h1>
 <h3 align="center">Aspiring Data Analyst | Python • SQL • Tableau • Excel | Based in Texas, USA</h3>
 
-<img align="right" alt="coding" width="300" src="gif_github.gif">
+<img align="right" alt="coding" width="300" src="gif.gif">
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=narasimha-31&label=Profile%20views&color=0e75b6&style=flat" alt="narasimha-31" /> </p>
 
