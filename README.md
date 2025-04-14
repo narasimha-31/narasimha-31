@@ -9,7 +9,9 @@
 
 - 📬 Reach me at: narasimharoyal31@gmail.com
 
-- 🔗 Connect with me on [LinkedIn](https://www.linkedin.com/in/www.linkedin.com/in/narasimha31) 
+- 🔗 Connect with me on [LinkedIn](https://www.linkedin.com/in/www.linkedin.com/in/narasimha31)
+
+- 📂 Check out my Portfolio Website: [Portfolio](https://narasimha.netlify.app/)
 
 
 
