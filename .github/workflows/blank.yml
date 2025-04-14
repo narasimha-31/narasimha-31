@@ -15,6 +15,11 @@ jobs:
           github_user_name: narasimha-31
           svg_out_path: dist/github-contribution-grid-snake.svg
 
+      - name: Verify output directory
+        run: |
+          mkdir -p dist
+          ls -la dist
+
       - name: Push to GitHub Pages branch
         uses: crazy-max/ghaction-github-pages@v3
         with:
