@@ -1,5 +1,5 @@
 <h1 align="center">Hello Folks 👋, I'm Narasimha Royal</h1>
-<h3 align="center">Aspiring Data Analyst | Python • SQL • Tableau • Excel | Based in Houston, Texas, USA</h3>
+<h3 align="center">Aspiring Data Analyst | Python • SQL • Tableau • Excel • Web Dev | Based in Houston, Texas, USA</h3>
 
 <img align="right" alt="coding" width="400" src="gif.gif">
 
