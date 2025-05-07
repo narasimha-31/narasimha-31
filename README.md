@@ -5,7 +5,7 @@
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=narasimha-31&label=Profile%20views&color=0e75b6&style=flat" alt="narasimha-31" /> </p>
 
-- 📊 I’m currently diving into **Real-World Data Analytics Projects**
+- 📊 I’m currently working on**Real-World Data Analytics Projects**
 
 - 📬 Reach me at: narasimharoyal31@gmail.com
 
