@@ -11,7 +11,7 @@
 
 - 🔗 Connect with me on [LinkedIn](https://www.linkedin.com/in/narasimha31/)
 
-- 📂 Check out my portfolio website: [Portfolio](https://narasimha.netlify/)
+- 🔗 Check out my portfolio website: [Portfolio](https://narasimha.netlify/)
 
 
 
