@@ -1,4 +1,4 @@
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=roboto&size=50&duration=3250&color=24A2F7&center=true&vCenter=true&multiline=true&width=500&height=200&lines=Hey%2C+I'm+Narasimha+Royal!;A+student+and+an+aspiring+Data+Analyst!)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=roboto&size=30&duration=32500&color=24A2F7&center=true&vCenter=true&multiline=true&width=200&height=200&lines=Hey%2C+I'm+Narasimha+Royal!;A+student+and+an+aspiring+Data+Analyst!)](https://git.io/typing-svg)
 
 
 <h1 align="center">Hello Folks 👋, I'm Narasimha Royal</h1>
