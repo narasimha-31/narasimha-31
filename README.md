@@ -1,5 +1,5 @@
 
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=fira+code&size=30&duration=3500&color=00FFAA&center=true&vCenter=true&multiline=true&width=600&height=80&lines=Hey%2C+I'm+Narasimha+Royal!;An+aspiring+data+analyst+with+a+curious+mind!!)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=fira+code&size=30&duration=3500&color=00FFAA&center=true&vCenter=true&multiline=true&width=650&height=80&lines=Hey%2C+I'm+Narasimha+Royal!;An+aspiring+data+analyst+with+a+curious+mind!!)](https://git.io/typing-svg)
 
 
 <h3 align="center"> Python • SQL • Tableau • Excel • Web Dev| Based in Texas, USA</h3>
