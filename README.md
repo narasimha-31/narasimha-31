@@ -1,5 +1,8 @@
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=roboto&size=24&duration=3250&color=24A2F7&center=true&vCenter=true&multiline=true&width=500&height=75&lines=Hey%2C+I'm+Eric!;A+student+and+an+aspiring+developer!)](https://git.io/typing-svg)
+
+
 <h1 align="center">Hello Folks 👋, I'm Narasimha Royal</h1>
-<h3 align="center">Aspiring Data Analyst | Python • SQL • Tableau • Excel • Web Dev| Based in Texas, USA</h3>
+<h3 align="center"> Python • SQL • Tableau • Excel • Web Dev| Based in Texas, USA</h3>
 
 <img align="right" alt="coding" width="480" src="gif2.gif">
 
