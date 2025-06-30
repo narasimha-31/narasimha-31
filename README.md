@@ -8,7 +8,7 @@
 
 - 📊 I’m currently working on **Real-World Data Analytics Projects**
 
-- I’m currently diving into **Machine Learning, AI and AI agents automation**
+- I’m currently diving into **Machine Learning, AI and AI agents**
 
 - 📬 Reach me at: narasimharoyal31@gmail.com
 
