@@ -14,7 +14,7 @@
 
 - 🔗 Connect with me on [LinkedIn](https://www.linkedin.com/in/narasimha31/)
 
-- 🔗 Check out my portfolio website: [Portfolio](https://narasimha.netlify/)
+- 🔗 Check out my portfolio website: [Portfolio](https://narasimharoyal.com/)
 
 
 <h3 align="left">🛠 Languages & Tools I Use for Data Analysis:</h3> 
