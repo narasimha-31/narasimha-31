@@ -4,6 +4,17 @@
 
 <h3 align="center"> Python • SQL • Tableau • Excel • Web Developer | Based in Houston, TX, USA</h3>
 
+<hr>
+<h2>
+<picture> <img src="https://github.com/7oSkaaa/7oSkaaa/raw/main/Images/about_me.gif?raw=true" width="50px">  </picture></themed-picture> About me</h2>
+<p dir="auto"><themed-picture data-catalyst-inline="true"><picture> 
+<p dir="auto"></p>
+<ul dir="auto">
+<li><g-emoji class="g-emoji" alias="school" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3eb.png"></g-emoji> I am a <code>Master's in Computer Science Student</code> at University of Houston .</li>
+<li><g-emoji class="g-emoji" alias="nerd_face" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f913.png">🤓</g-emoji>  Forever, a learner...</code>.</li>
+</ul>
+<hr>
+  
 <img align="right" alt="coding" width="480" src="gif2.gif">
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=narasimha-31&label=Profile%20views&color=0e75b6&style=flat" alt="narasimha-31" /> </p>
@@ -17,6 +28,8 @@
 - 🔗 Connect with me on [LinkedIn](https://www.linkedin.com/in/narasimha31/)
 
 - 🔗 Check out my portfolio website: [Portfolio](https://narasimharoyal.com/)
+
+
 
 
 
