@@ -1,0 +1,24 @@
+name: gitartwork
+on:
+  push:
+    branches:
+      - main # Or whatever your default branch is
+  workflow_dispatch: # Allows you to run it manually
+jobs:
+  build:
+    name: Make gitartwork SVG
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: jasineri/gitartwork@v1
+        with:
+          # Your GitHub username
+          user_name: narasimha-31
+          
+          # Optional: Text to display on the graph
+          # text: NARASIMHA
+      
+      - uses: jasineri/simple-push-action@v1
+        with:
+          # This sets the commit message for the new SVG file
+          commit_message: "feat: update gitartwork.svg"
