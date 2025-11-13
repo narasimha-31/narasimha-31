@@ -38,6 +38,12 @@
   <img src="https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge&logo=matplotlib&logoColor=white"/>
 </p>
 
+## <picture> <img src = "https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/Statistics.gif?raw=true" width = 50px>  </picture> Github Stats
+<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=narasimha-31&show_icons=true&locale=en&layout=compact" alt="narasimha" /></p>
+
+<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=narasimha-31&show_icons=true&locale=en" alt="narasimha" /></p>
+
+<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=narasimha-31&" alt="narasimha" /></p>
 
 
 
