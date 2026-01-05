@@ -53,20 +53,16 @@
 
 ## <picture> <img src = "https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/Statistics.gif?raw=true" width = 50px>  </picture> GitHub Stats
 
-<div align="center">
 
-<a href="https://github.com/narasimha-31">
-  <img height="160" src="https://github-readme-stats.vercel.app/api?username=narasimha-31&show_icons=true&theme=blueberry&hide=prs&count_private=true"/>
-</a>
-<a href="https://github.com/narasimha-31">
-  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs?username=narasimha-31&show_icons=true&locale=en&layout=compact&langs_count=6&theme=blueberry"/>
-</a>
 
-<a href="https://github.com/narasimha-31">
-  <img height="160" src="https://github-readme-streak-stats.herokuapp.com/?user=narasimha-31&theme=blueberry"/>
-</a>
+![GitHub stats](https://github-readme-stats.vercel.app/api?username=narasimha-31&show_icons=true&theme=blueberry&hide=prs&count_private=true)
 
-</div>
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=narasimha-31&layout=compact&langs_count=6&theme=blueberry)
+
+![GitHub Streak](https://streak-stats.demolab.com?user=narasimha-31&theme=blueberry)
+
+
+
 
 
 
