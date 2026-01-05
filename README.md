@@ -51,10 +51,22 @@
   <img src="https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge&logo=matplotlib&logoColor=white"/>
 </p>
 
-## <picture> <img src = "https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/Statistics.gif?raw=true" width = 50px>  </picture> Github Stats
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=narasimha-31&show_icons=true&locale=en&layout=compact" alt="narasimha" /></p>
+## <picture> <img src = "https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/Statistics.gif?raw=true" width = 50px>  </picture> GitHub Stats
 
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=narasimha-31&show_icons=true&locale=en" alt="narasimha" /></p>
+<div align="center">
+
+<a href="https://github.com/narasimha-31">
+  <img height="160" src="https://github-readme-stats.vercel.app/api?username=narasimha-31&show_icons=true&theme=blueberry&hide=prs&count_private=true"/>
+</a>
+<a href="https://github.com/narasimha-31">
+  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs?username=narasimha-31&show_icons=true&locale=en&layout=compact&langs_count=6&theme=blueberry"/>
+</a>
+
+<a href="https://github.com/narasimha-31">
+  <img height="160" src="https://github-readme-streak-stats.herokuapp.com/?user=narasimha-31&theme=blueberry"/>
+</a>
+
+</div>
 
 
 
