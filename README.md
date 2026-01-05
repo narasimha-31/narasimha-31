@@ -54,12 +54,14 @@
 ## <picture> <img src = "https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/Statistics.gif?raw=true" width = 50px>  </picture> GitHub Stats
 
 
+## GitHub Stats
 
 ![GitHub stats](https://github-readme-stats.vercel.app/api?username=narasimha-31&show_icons=true&theme=blueberry&hide=prs&count_private=true)
 
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=narasimha-31&layout=compact&langs_count=6&theme=blueberry)
 
 ![GitHub Streak](https://streak-stats.demolab.com?user=narasimha-31&theme=blueberry)
+
 
 
 
