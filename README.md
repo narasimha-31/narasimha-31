@@ -21,7 +21,7 @@
 
 - 📊 I’m currently working on **Real-World Data Analytics Projects**
 
-- I’m currently diving into **Machine Learning, AI and AI agents**
+- I’m currently diving into **AI and Automation**
 
 - 📬 Reach me at: narasimharoyal31@gmail.com
 
@@ -53,8 +53,6 @@
 
 ## <picture> <img src = "https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/Statistics.gif?raw=true" width = 50px>  </picture> GitHub Stats
 
-
-## GitHub Stats
 
 ![GitHub stats](https://github-readme-stats.vercel.app/api?username=narasimha-31&show_icons=true&theme=blueberry&hide=prs&count_private=true)
 
