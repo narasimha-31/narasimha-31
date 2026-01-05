@@ -16,7 +16,7 @@ jobs:
           user_name: narasimha-31
           
           # Optional: Text to display on the graph
-          text: DATA
+          text: NARASIMHA
       
       - uses: jasineri/simple-push-action@v1
         with:
