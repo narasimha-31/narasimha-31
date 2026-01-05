@@ -50,21 +50,10 @@
   <img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white"/>
   <img src="https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge&logo=matplotlib&logoColor=white"/>
 </p>
-
+"
 ## <picture> <img src = "https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/Statistics.gif?raw=true" width = 50px>  </picture> GitHub Stats
 
-## 🏆 Achievements & Stats
-
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=narasimha-31&theme=flat&no-frame=true&margin-w=15" alt="trophies" />
-</div>
-<br>
-
-<div align="center">
-  <img src="https://streak-stats.demolab.com?user=narasimha-31&theme=blueberry&hide_border=true" height="180" alt="streak graph" />
-</div>
-
-
+"
 
 
 
