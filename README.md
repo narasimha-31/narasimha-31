@@ -21,7 +21,7 @@
 
 - 📊 I’m currently working on **Real-World Data Analytics Projects**
 
-- I’m currently diving into **AI and Automation**
+- I’m currently diving into **AI and Data Engineering**
 
 - 📬 Reach me at: narasimharoyal31@gmail.com
 
