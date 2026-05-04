@@ -1,67 +1,38 @@
 ![gitartwork](gitartwork.svg)
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=roboto&size=24&duration=3250&color=24A2F7&center=true&vCenter=true&multiline=true&width=500&height=75&lines=Hey+👋%2C+I'm+Narasimha+Royal;Data+Analyst)](https://git.io/typing-svg)
 
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=roboto&size=24&duration=3250&color=24A2F7&center=true&vCenter=true&multiline=true&width=500&height=75&lines=Hey+👋%2C+I'm+Narasimha+Royal;Data+Analyst!!)](https://git.io/typing-svg)
-
-<h3 align="center"> Python • SQL • Tableau • Power BI • Excel | Based in Houston, TX, USA</h3>
-
+<h3 align="center">SQL • Python • Power BI • Tableau • PostgreSQL • Airflow | Houston, TX</h3>
 <hr>
-<h2>
-<picture> <img src="https://github.com/7oSkaaa/7oSkaaa/raw/main/Images/about_me.gif?raw=true" width="50px">  </picture></themed-picture> About me</h2>
-<p dir="auto"><themed-picture data-catalyst-inline="true"><picture> 
-<p dir="auto"></p>
-<ul dir="auto">
-<li><g-emoji class="g-emoji" alias="school" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3eb.png"></g-emoji> I am a <code>Master's in Computer Science Student</code> at University of Houston .</li>
-<li><g-emoji class="g-emoji" alias="nerd_face" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f913.png">🤓</g-emoji>  Forever, a learner...</code>.</li>
-</ul>
-<hr>
-  
+
 <img align="right" alt="coding" width="480" src="gif2.gif">
+
+<h2>About Me</h2>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=narasimha-31&label=Profile%20views&color=0e75b6&style=flat" alt="narasimha-31" /> </p>
 
-- 📊 I’m currently working on **Real-World Data Analytics Projects**
+2+ years of experience in data analysis, dashboard development, and reporting across Zensar Technologies and University of Houston. I build SQL pipelines, Power BI dashboards, and Python automation that replace manual work with real insights.
 
-- I’m currently diving into **AI and Data Engineering**
+- Recently built an NLP pipeline processing **44.2M Amazon reviews** with VADER sentiment scoring, Airflow orchestration, and a 4-page Power BI dashboard
+- Designed a **Power BI dashboard analyzing 449K+ H1B wage records** across 530 regions with parameterized DAX measures
+- Automated data cleaning pipelines at Zensar Technologies, cutting manual prep from **4+ hours to 30 minutes**
+- Reach me at: [narasimharoyal31@gmail.com](mailto:narasimharoyal31@gmail.com)
+- [LinkedIn](https://www.linkedin.com/in/narasimha31/) | [Portfolio](https://narasimharoyal.com/)
 
-- 📬 Reach me at: narasimharoyal31@gmail.com
+<hr>
 
-- 🔗 Connect with me on [LinkedIn](https://www.linkedin.com/in/narasimha31/)
-
-- 🔗 Check out my portfolio website: [Portfolio](https://narasimharoyal.com/)
-
-
-
-
-
-<h3 align="left">🛠 Languages & Tools I Use for Data Analysis:</h3> 
-
+<h3 align="left">Tech Stack</h3>
 <p align="left">
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
-  
-  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white"/>
-  
-  <img src="https://img.shields.io/badge/Microsoft Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white"/>
-  
   <img src="https://img.shields.io/badge/SQL-005C84?style=for-the-badge&logo=postgresql&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=tableau&logoColor=white"/>
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white"/>
   <img src="https://img.shields.io/badge/Power BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=tableau&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Microsoft Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white"/>
   <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white"/>
-  <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white"/> 
+  <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white"/>
+  <img src="https://img.shields.io/badge/PySpark-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Airflow-017CEE?style=for-the-badge&logo=apacheairflow&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
   <img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge&logo=matplotlib&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"/>
 </p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
