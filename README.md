@@ -10,14 +10,12 @@
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=narasimha-31&label=Profile%20views&color=0e75b6&style=flat" alt="narasimha-31" /> </p>
 
-Data Engineer with 2+ years of experience designing and building data pipelines, ETL workflows, and multi-source ingestion systems across datasets ranging from 500K to 44M+ records. Proficient in Apache Kafka, Airflow, dbt, and Medallion Architecture for end-to-end pipeline design, with hands-on experience implementing data quality frameworks including Great Expectations checkpoints, dead-letter queues, and schema validation gates.
+I am a Data Analyst transitioning into Data Engineering, specializing in building reliable Python/SQL ETL pipelines, automating data workflows, and engineering scalable relational databases. I focus on replacing manual processes with clean, automated infrastructure and delivering query-ready datasets for cross-functional teams.
 
-- Architected a **Kafka-to-PostgreSQL streaming pipeline** ingesting from 3 US government APIs processing **150K+ trade records, 2,000+ regulatory documents, and 500+ SEC filings**, with **20+ dbt models** and **99%+ data quality pass rate** via Great Expectations
-- Designed an end-to-end **NLP pipeline processing 44.2M Amazon reviews** through a Medallion Architecture (Bronze, Silver, Gold) with a fake review risk model flagging **1,037 suspicious reviewers out of 3.2M**, orchestrated via a 6-task Airflow DAG in Docker
-- Built ETL pipelines at Zensar Technologies ingesting **500K+ delivery records daily** with incremental loading and data quality validation, reducing downstream reconciliation errors by **22%** and processing time by **35%**
-- Maintained **90%+ system uptime** through automated Python + SQL log ingestion pipelines for 600+ concurrent users at UH
-- Reach me at: [narasimharoyal31@gmail.com](mailto:narasimharoyal31@gmail.com)
-- [LinkedIn](https://www.linkedin.com/in/narasimha31/) | [Portfolio](https://narasimharoyal.com/)
+- 🔭 **Current Focus:** Building streaming data pipelines, orchestrating workflows with Airflow, and mastering modern data stack tools (dbt, Docker, Kafka).
+- 💬 **Ask me about:** Python automation, SQL optimization, data extraction, and migrating messy data into clean reporting layers.
+- 📫 **Reach me at:** [narasimharoyal31@gmail.com](mailto:narasimharoyal31@gmail.com)
+- 🔗 **Links:** [LinkedIn](https://www.linkedin.com/in/narasimha31/) | [Portfolio](https://narasimharoyal.com/)
 
 <hr>
 
@@ -49,10 +47,10 @@ Data Engineer with 2+ years of experience designing and building data pipelines,
 
 <h3 align="left">Featured Projects</h3>
 
-🔹 **[Semiconductor Supply Chain Intelligence Platform](https://github.com/narasimha-31)** — Kafka-to-PostgreSQL streaming pipeline ingesting from US Census Trade, Federal Register, and SEC EDGAR. Medallion Architecture with 20+ dbt models, Great Expectations validation (99%+ pass rate), 6 Airflow DAGs, fully Dockerized.
+🔹 **[Semiconductor Supply Chain Intelligence Platform](https://github.com/narasimha-31)** — Built a Kafka-to-PostgreSQL streaming pipeline pulling ~150K records from three public government APIs. Used dbt to manage downstream transformations and Great Expectations to catch upstream schema changes, containerizing the entire stack via Docker.
 &nbsp;&nbsp;&nbsp;&nbsp;`Python` `Kafka` `Airflow` `PostgreSQL` `dbt` `Great Expectations` `Docker`
 
-🔹 **[Amazon Review Sentiment Analysis Pipeline](https://github.com/narasimha-31/Amazon_Reviews_ETL_Analytics)** — End-to-end pipeline processing 44.2M Amazon reviews through Medallion Architecture with VADER sentiment scoring, dead-letter queue capturing 6,231 malformed rows, fake review risk model on Gold layer, and a 4-page Power BI dashboard.
+🔹 **[Amazon Review Sentiment Analysis Pipeline](https://github.com/narasimha-31/Amazon_Reviews_ETL_Analytics)** — Engineered an end-to-end Airflow pipeline to ingest 44.2M Amazon reviews into PostgreSQL via keyset pagination. Built a dead-letter queue that successfully isolated ~6,200 malformed records and ran NLP sentiment scoring to flag suspicious accounts.
 &nbsp;&nbsp;&nbsp;&nbsp;`Python` `PostgreSQL` `Airflow` `Docker` `VADER` `Power BI`
 
 🔹 **[Airline Seat Forecasting](https://github.com/narasimha-31/Airline_Data_Analysis)** — Processed 3.3M airline records with Apache Spark and trained an LSTM neural network predicting Delta's 2025 passenger volume at ~88% accuracy, paired with four Tableau dashboards covering quarterly trends, passenger patterns, and cargo analysis.
@@ -62,18 +60,21 @@ Data Engineer with 2+ years of experience designing and building data pipelines,
 
 <h3 align="left">Experience</h3>
 
-**Instructional Assistant -- Data Systems** · University of Houston · *Aug 2025 – May 2026*
-Maintaining backend relational databases for a non-profit client (ESCH), designing structured data pipelines to standardize 1,000+ student records, and mapping source-to-target field mappings for analytics-ready reporting.
+**Instructional Assistant (Data Systems & Analytics)** · University of Houston · *Apr 2025 – May 2026*
+- **Client Database Architecture:** Led database schema design and migration for a non-profit client (ESCH), standardizing fragmented operational records into a clean, queryable reporting layer.
+- **SQL Code Review:** Conducted routine SQL code reviews and enforced standard database design principles for ~15 agile project teams delivering technical solutions to external clients.
+- **Automated Code Validation:** Built a Python-based testing script to automatically validate query outputs and execution times against a master schema, replacing manual code evaluation and accelerating the technical review process.
+- **Internal Data Pipelines:** Automated a routine SQL data pull from departmental Smartsheets, consolidating budget categories into a unified dataset that eliminated manual weekly reconciliation for the admin team.
 
-**Student Assistant -- Financial Data & Reporting** · University of Houston · *Apr 2025 – Aug 2025*
-Built an ETL workflow extracting financial data from Smartsheet with transformation logic for budget categories and vendor classifications. Modeled consolidated datasets using SQL (CTEs, JOINs) across 3 departmental systems.
+**Graduate Assistant (Systems Data Operations)** · University of Houston · *Dec 2024 – Apr 2025*
+- **Log Parsing & Analysis:** Wrote Python scripts to parse daily system usage logs across a 600-user lab environment, formatting raw text data into queryable SQL tables to track peak volume windows.
+- **Incident Tracking:** Queried system error logs to build a structured incident tracking database, successfully isolating ~15 specific testing stations that were silently dropping network connections.
+- **Operational Reporting:** Built weekly lab health reports from SQL-queried error logs, surfacing hardware failure trends that provided department heads with the exact data needed to justify replacing faulty lab equipment.
 
-**Graduate Assistant -- Systems & Data Operations** · University of Houston · *Dec 2024 – Apr 2025*
-Built a Python + SQL log ingestion pipeline processing daily system usage data from 600+ concurrent users, structuring raw logs into queryable tables for infrastructure monitoring with 90%+ uptime.
-
-**Associate Data Engineer** · Zensar Technologies · *Mar 2023 – Apr 2024*
-Designed Python-based ETL pipelines ingesting 500K+ delivery records daily, engineered batch processing workflows across 5+ source systems (reducing reconciliation errors by 22%), and refactored ingestion with incremental loading + schema partitioning (cutting processing time by 35%).
+**Data Analyst** · Zensar Technologies · *Mar 2023 – Apr 2024*
+- **Python Automation:** Replaced a highly manual Excel extraction process with a Python (Pandas) script, cutting the daily data prep pipeline for delivery reports from ~3 hours down to under 20 minutes.
+- **SQL Data Validation:** Wrote routine SQL validation checks (using CTEs and window functions) across 5 distinct source systems, catching and flagging an average of ~150 malformed or duplicate records weekly before they reached the BI layer.
+- **Power BI Dashboarding:** Built and maintained interactive Power BI dashboards to track delivery SLAs and turnaround times, dropping ad-hoc data requests from project managers from ~15 a week down to 2 or 3.
+- **Cross-Functional Analytics:** Maintained a centralized data dictionary across delivery teams, standardizing metric definitions and SQL data models to keep cross-department reporting consistent.
 
 <hr>
-
-
