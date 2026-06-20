@@ -1,80 +1,115 @@
-![gitartwork](gitartwork.svg)
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=roboto&size=24&duration=3250&color=24A2F7&center=true&vCenter=true&multiline=true&width=500&height=75&lines=Hey+👋%2C+I'm+Narasimha+Royal;Data+Engineer)](https://git.io/typing-svg)
+<!-- ===== ANIMATED HEADER (fade-in, Gemini gradient) ===== -->
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=200&color=0:1ba1e3,50:9168cf,100:ec5f78&text=Narasimha%20Royal&fontColor=ffffff&fontSize=50&fontAlignY=38&animation=fadeIn&desc=Data%20Engineer%20%E2%80%94%20Pipeline%20Builder&descSize=20&descAlignY=58"/>
 
-<h3 align="center">Python • SQL • Apache Kafka • Airflow • dbt • PostgreSQL • Medallion Architecture | Houston, TX</h3>
-<hr>
+<!-- ===== CUSTOM ANIMATED DATA PIPELINE (your signature — commit data-pipeline.svg to repo root) ===== -->
+<p align="center">
+  <img width="100%" src="https://raw.githubusercontent.com/narasimha-31/narasimha-31/main/data-pipeline.svg" alt="Live data pipeline: Sources to Kafka to Airflow to dbt to Postgres"/>
+</p>
 
-<img align="right" alt="coding" width="480" src="gif2.gif">
+<!-- ===== ANIMATED TYPING LINE ===== -->
+<p align="center">
+  <a href="https://git.io/typing-svg">
+    <img src="https://readme-typing-svg.demolab.com?font=Roboto&weight=600&size=24&pause=900&color=24A99F&center=true&vCenter=true&width=620&height=45&lines=Building+streaming+pipelines+at+scale;Kafka+%E2%86%92+Airflow+%E2%86%92+dbt+%E2%86%92+PostgreSQL;Turning+messy+data+into+query-ready+products"/>
+  </a>
+</p>
 
-<h2>About Me</h2>
+<p align="center">
+  <a href="https://www.linkedin.com/in/narasimha31/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+  <a href="https://narasimharoyal.com/"><img src="https://img.shields.io/badge/Portfolio-24A99F?style=for-the-badge&logo=google-chrome&logoColor=white"/></a>
+  <a href="mailto:narasimharoyal31@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/></a>
+  <img src="https://komarev.com/ghpvc/?username=narasimha-31&label=Profile+views&color=24A99F&style=for-the-badge"/>
+</p>
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=narasimha-31&label=Profile%20views&color=0e75b6&style=flat" alt="narasimha-31" /> </p>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=rect&height=3&color=0:1ba1e3,50:9168cf,100:ec5f78&animation=twinkling"/>
 
-I am a Data Analyst transitioning into Data Engineering, specializing in building reliable Python/SQL ETL pipelines, automating data workflows, and engineering scalable relational databases. I focus on replacing manual processes with clean, automated infrastructure and delivering query-ready datasets for cross-functional teams.
+## About Me
 
-- 🔭 **Current Focus:** Building streaming data pipelines, orchestrating workflows with Airflow, and mastering modern data stack tools (dbt, Docker, Kafka).
-- 💬 **Ask me about:** Python automation, SQL optimization, data extraction, and migrating messy data into clean reporting layers.
-- 📫 **Reach me at:** [narasimharoyal31@gmail.com](mailto:narasimharoyal31@gmail.com)
-- 🔗 **Links:** [LinkedIn](https://www.linkedin.com/in/narasimha31/) | [Portfolio](https://narasimharoyal.com/)
+Data Engineer with a Data Analyst foundation. I build the **Python/SQL ETL pipelines, orchestration, and relational databases** that turn fragmented, messy sources into clean, query-ready data products — replacing manual processes with automated infrastructure teams can trust.
 
-<hr>
+**Currently building** &mdash; streaming pipelines (Kafka to PostgreSQL), Airflow-orchestrated workflows, and Medallion-architected data products with dbt and Docker.
 
-<h3 align="left">Tech Stack</h3>
-<p align="left">
+**Strong on** &mdash; Python automation, SQL optimization, data-quality gating (Great Expectations, dead-letter queues), and migrating messy data into clean reporting layers.
+
+**Scale** &mdash; pipelines spanning **500K to 44M+ records** across government APIs, e-commerce, and enterprise delivery data.
+
+<img width="100%" src="https://capsule-render.vercel.app/api?type=rect&height=3&color=0:1ba1e3,50:9168cf,100:ec5f78&animation=twinkling"/>
+
+## Tech Stack
+
+**Languages**
+<p>
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
   <img src="https://img.shields.io/badge/SQL-005C84?style=for-the-badge&logo=postgresql&logoColor=white"/>
-  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white"/>
+  <img src="https://img.shields.io/badge/PySpark-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white"/>
+</p>
+
+**Orchestration & Pipelines**
+<p>
   <img src="https://img.shields.io/badge/Apache%20Kafka-231F20?style=for-the-badge&logo=apachekafka&logoColor=white"/>
   <img src="https://img.shields.io/badge/Apache%20Airflow-017CEE?style=for-the-badge&logo=apacheairflow&logoColor=white"/>
   <img src="https://img.shields.io/badge/dbt-FF694B?style=for-the-badge&logo=dbt&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Apache%20Spark-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white"/>
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Databricks-FF3621?style=for-the-badge&logo=databricks&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Snowflake-29B5E8?style=for-the-badge&logo=snowflake&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Google%20Cloud-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white"/>
-  <img src="https://img.shields.io/badge/BigQuery-669DF6?style=for-the-badge&logo=googlebigquery&logoColor=white"/>
-  <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Azure-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white"/>
-  <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black"/>
-  <img src="https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=tableau&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Great%20Expectations-FF6310?style=for-the-badge&logo=greatexpectations&logoColor=white"/>
 </p>
 
-<hr>
+**Storage & Warehouse**
+<p>
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Snowflake-29B5E8?style=for-the-badge&logo=snowflake&logoColor=white"/>
+  <img src="https://img.shields.io/badge/BigQuery-669DF6?style=for-the-badge&logo=googlebigquery&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Databricks-FF3621?style=for-the-badge&logo=databricks&logoColor=white"/>
+</p>
 
-<h3 align="left">Featured Projects</h3>
+**Cloud & Visualization**
+<p>
+  <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Google%20Cloud-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=tableau&logoColor=white"/>
+</p>
 
-🔹 **[Semiconductor Supply Chain Intelligence Platform](https://github.com/narasimha-31)** — Built a Kafka-to-PostgreSQL streaming pipeline pulling ~150K records from three public government APIs. Used dbt to manage downstream transformations and Great Expectations to catch upstream schema changes, containerizing the entire stack via Docker.
-&nbsp;&nbsp;&nbsp;&nbsp;`Python` `Kafka` `Airflow` `PostgreSQL` `dbt` `Great Expectations` `Docker`
+<img width="100%" src="https://capsule-render.vercel.app/api?type=rect&height=3&color=0:1ba1e3,50:9168cf,100:ec5f78&animation=twinkling"/>
 
-🔹 **[Amazon Review Sentiment Analysis Pipeline](https://github.com/narasimha-31/Amazon_Reviews_ETL_Analytics)** — Engineered an end-to-end Airflow pipeline to ingest 44.2M Amazon reviews into PostgreSQL via keyset pagination. Built a dead-letter queue that successfully isolated ~6,200 malformed records and ran NLP sentiment scoring to flag suspicious accounts.
-&nbsp;&nbsp;&nbsp;&nbsp;`Python` `PostgreSQL` `Airflow` `Docker` `VADER` `Power BI`
+## Featured Projects
 
-🔹 **[Airline Seat Forecasting](https://github.com/narasimha-31/Airline_Data_Analysis)** — Processed 3.3M airline records with Apache Spark and trained an LSTM neural network predicting Delta's 2025 passenger volume at ~88% accuracy, paired with four Tableau dashboards covering quarterly trends, passenger patterns, and cargo analysis.
-&nbsp;&nbsp;&nbsp;&nbsp;`PySpark` `Python` `Tableau`
+### [Semiconductor Supply Chain Intelligence Platform](https://github.com/narasimha-31)
+Kafka-to-PostgreSQL **streaming pipeline** pulling ~150K records from three public government APIs. dbt manages downstream transformations, **Great Expectations** catches upstream schema drift, and the whole stack is containerized with Docker.
+> `Python` `Kafka` `Airflow` `PostgreSQL` `dbt` `Great Expectations` `Docker`
 
-<hr>
+### [Amazon Review Sentiment Analysis Pipeline](https://github.com/narasimha-31/Amazon_Reviews_ETL_Analytics)
+End-to-end **Airflow pipeline** ingesting **44.2M Amazon reviews** into PostgreSQL via keyset pagination. A dead-letter queue isolates ~6,200 malformed records, with NLP sentiment scoring flagging suspicious accounts across a Medallion (Bronze to Gold) layout.
+> `Python` `PostgreSQL` `Airflow` `Docker` `VADER` `Power BI`
 
-<h3 align="left">Experience</h3>
+### [Airline Traffic Analysis](https://github.com/narasimha-31/Airline_Data_Analysis)
+Processed **3.3M US DOT records into ~1.1M clean rows** with Apache Spark, powering a multi-page Tableau analysis of **34 years** of passenger and cargo trends across quarterly and carrier breakdowns.
+> `PySpark` `Python` `Tableau`
 
-**Instructional Assistant (Data Systems & Analytics)** · University of Houston · *Apr 2025 – May 2026*
-- **Client Database Architecture:** Led database schema design and migration for a non-profit client (ESCH), standardizing fragmented operational records into a clean, queryable reporting layer.
-- **SQL Code Review:** Conducted routine SQL code reviews and enforced standard database design principles for ~15 agile project teams delivering technical solutions to external clients.
-- **Automated Code Validation:** Built a Python-based testing script to automatically validate query outputs and execution times against a master schema, replacing manual code evaluation and accelerating the technical review process.
-- **Internal Data Pipelines:** Automated a routine SQL data pull from departmental Smartsheets, consolidating budget categories into a unified dataset that eliminated manual weekly reconciliation for the admin team.
+<img width="100%" src="https://capsule-render.vercel.app/api?type=rect&height=3&color=0:1ba1e3,50:9168cf,100:ec5f78&animation=twinkling"/>
 
-**Graduate Assistant (Systems Data Operations)** · University of Houston · *Dec 2024 – Apr 2025*
-- **Log Parsing & Analysis:** Wrote Python scripts to parse daily system usage logs across a 600-user lab environment, formatting raw text data into queryable SQL tables to track peak volume windows.
-- **Incident Tracking:** Queried system error logs to build a structured incident tracking database, successfully isolating ~15 specific testing stations that were silently dropping network connections.
-- **Operational Reporting:** Built weekly lab health reports from SQL-queried error logs, surfacing hardware failure trends that provided department heads with the exact data needed to justify replacing faulty lab equipment.
+## Experience
+
+**Instructional Assistant — Data Systems & Analytics** · University of Houston · *Apr 2025 – May 2026*
+- Led **schema design & migration** for a non-profit client (ESCH), standardizing fragmented records into a clean, queryable reporting layer.
+- Ran SQL code reviews and built a **Python validation script** checking query outputs/runtimes against a master schema for ~15 agile teams.
+
+**Graduate Assistant — Systems Data Operations** · University of Houston · *Dec 2024 – Apr 2025*
+- Parsed daily logs from a **600-user lab** into queryable SQL tables, surfacing peak-volume windows.
+- Built a SQL **incident-tracking database** isolating ~15 testing stations silently dropping network connections.
 
 **Data Analyst** · Zensar Technologies · *Mar 2023 – Apr 2024*
-- **Python Automation:** Replaced a highly manual Excel extraction process with a Python (Pandas) script, cutting the daily data prep pipeline for delivery reports from ~3 hours down to under 20 minutes.
-- **SQL Data Validation:** Wrote routine SQL validation checks (using CTEs and window functions) across 5 distinct source systems, catching and flagging an average of ~150 malformed or duplicate records weekly before they reached the BI layer.
-- **Power BI Dashboarding:** Built and maintained interactive Power BI dashboards to track delivery SLAs and turnaround times, dropping ad-hoc data requests from project managers from ~15 a week down to 2 or 3.
-- **Cross-Functional Analytics:** Maintained a centralized data dictionary across delivery teams, standardizing metric definitions and SQL data models to keep cross-department reporting consistent.
+- Replaced a manual Excel process with **Python (Pandas)** — cut daily prep from **~3 hrs to under 20 min**.
+- SQL validation (CTEs, window functions) across **5 source systems**, flagging ~150 bad records weekly; Power BI SLA dashboards cut ad-hoc requests **~15/wk to 2–3**.
 
-<hr>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=rect&height=3&color=0:1ba1e3,50:9168cf,100:ec5f78&animation=twinkling"/>
+
+## Stats & Activity
+
+<p align="center">
+  <img height="165" src="https://github-readme-stats.vercel.app/api?username=narasimha-31&show_icons=true&hide_border=true&theme=tokyonight&icon_color=24A99F&title_color=9168cf"/>
+  <img height="165" src="https://github-readme-streak-stats.herokuapp.com/?user=narasimha-31&hide_border=true&theme=tokyonight&ring=9168cf&fire=ec5f78&currStreakLabel=24A99F"/>
+</p>
+
+<!-- ===== ANIMATED ACTIVITY GRAPH (your data flow — draws itself) ===== -->
+<img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=narasimha-31&bg_color=0d1117&color=24A99F&line=9168cf&point=ec5f78&area=true&hide_border=true"/>
+
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=120&color=0:ec5f78,50:9168cf,100:1ba1e3&section=footer&animation=fadeIn"/>
