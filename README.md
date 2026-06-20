@@ -1,15 +1,7 @@
 ![gitartwork](gitartwork.svg)
 
-<!-- ===== CUSTOM ANIMATED DATA PIPELINE (your signature) ===== -->
 <p align="center">
-  <img width="100%" src="data-pipeline.svg" alt="Live data pipeline: Sources to Kafka to Airflow to dbt to Postgres"/>
-</p>
-
-<!-- ===== ANIMATED TYPING LINE ===== -->
-<p align="center">
-  <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Roboto&weight=600&size=24&pause=900&color=24A99F&center=true&vCenter=true&width=620&height=45&lines=Building+streaming+pipelines+at+scale;Kafka+%E2%86%92+Airflow+%E2%86%92+dbt+%E2%86%92+PostgreSQL;Turning+messy+data+into+query-ready+products"/>
-  </a>
+  <img width="100%" src="data-pipeline.svg" alt="Data pipeline: sources, Kafka, Airflow, dbt, Postgres"/>
 </p>
 
 <p align="center">
@@ -23,13 +15,11 @@
 
 ## About Me
 
-Data Engineer with a Data Analyst foundation. I build the **Python/SQL ETL pipelines, orchestration, and relational databases** that turn fragmented, messy sources into clean, query-ready data products — replacing manual processes with automated infrastructure teams can trust.
+I'm a data engineer in Houston. I started out in analytics and moved into building the pipelines that sit behind the dashboards. Most of my day is Python and SQL: getting data out of messy sources and into clean, well modeled tables that people can actually query.
 
-**Currently building** &mdash; streaming pipelines (Kafka to PostgreSQL), Airflow-orchestrated workflows, and Medallion-architected data products with dbt and Docker.
+Lately I work mostly with Kafka, Airflow, and dbt, building batch and streaming pipelines on a bronze / silver / gold layout. I'm fairly opinionated about data quality, so I lean on Great Expectations checks, dead letter queues, and schema validation to stop bad rows before they reach a report.
 
-**Strong on** &mdash; Python automation, SQL optimization, data-quality gating (Great Expectations, dead-letter queues), and migrating messy data into clean reporting layers.
-
-**Scale** &mdash; pipelines spanning **500K to 44M+ records** across government APIs, e-commerce, and enterprise delivery data.
+So far I've shipped pipelines handling anywhere from 500K to 44M+ rows across government APIs, e-commerce reviews, and enterprise delivery data.
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=rect&height=3&color=0:1ba1e3,50:9168cf,100:ec5f78&animation=twinkling"/>
 
@@ -69,35 +59,35 @@ Data Engineer with a Data Analyst foundation. I build the **Python/SQL ETL pipel
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=rect&height=3&color=0:1ba1e3,50:9168cf,100:ec5f78&animation=twinkling"/>
 
-## Featured Projects
+## Projects
 
 ### [Semiconductor Supply Chain Intelligence Platform](https://github.com/narasimha-31)
-Kafka-to-PostgreSQL **streaming pipeline** pulling ~150K records from three public government APIs. dbt manages downstream transformations, **Great Expectations** catches upstream schema drift, and the whole stack is containerized with Docker.
+A streaming pipeline that pulls semiconductor trade and regulatory data from three US government APIs (Census Trade, Federal Register, SEC EDGAR) into PostgreSQL through Kafka. dbt handles the downstream models, Great Expectations catches schema changes before they break anything, and the whole stack runs in Docker.
 > `Python` `Kafka` `Airflow` `PostgreSQL` `dbt` `Great Expectations` `Docker`
 
 ### [Amazon Review Sentiment Analysis Pipeline](https://github.com/narasimha-31/Amazon_Reviews_ETL_Analytics)
-End-to-end **Airflow pipeline** ingesting **44.2M Amazon reviews** into PostgreSQL via keyset pagination. A dead-letter queue isolates ~6,200 malformed records, with NLP sentiment scoring flagging suspicious accounts across a Medallion (Bronze to Gold) layout.
+An Airflow pipeline that loads 44.2M Amazon reviews into PostgreSQL with keyset pagination so it doesn't fall over on the volume. Malformed rows get routed to a dead letter queue (about 6,200 of them), and a sentiment model on the gold layer flags reviewer accounts that look fake.
 > `Python` `PostgreSQL` `Airflow` `Docker` `VADER` `Power BI`
 
 ### [Airline Traffic Analysis](https://github.com/narasimha-31/Airline_Data_Analysis)
-Processed **3.3M US DOT records into ~1.1M clean rows** with Apache Spark, powering a multi-page Tableau analysis of **34 years** of passenger and cargo trends across quarterly and carrier breakdowns.
+Cut 3.3M rows of US DOT airline data down to about 1.1M clean records with Spark, then built a Tableau view covering 34 years of passenger and cargo trends by quarter and carrier.
 > `PySpark` `Python` `Tableau`
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=rect&height=3&color=0:1ba1e3,50:9168cf,100:ec5f78&animation=twinkling"/>
 
 ## Experience
 
-**Instructional Assistant — Data Systems & Analytics** · University of Houston · *Apr 2025 – May 2026*
-- Led **schema design & migration** for a non-profit client (ESCH), standardizing fragmented records into a clean, queryable reporting layer.
-- Ran SQL code reviews and built a **Python validation script** checking query outputs/runtimes against a master schema for ~15 agile teams.
+**Instructional Assistant, Data Systems & Analytics** · University of Houston · *Apr 2025 to May 2026*
+- Designed and migrated the database schema for a nonprofit client (ESCH), turning scattered records into one clean reporting layer.
+- Reviewed SQL and database design for around 15 student project teams, and wrote a Python script that checks their query output and run times against a reference schema.
 
-**Graduate Assistant — Systems Data Operations** · University of Houston · *Dec 2024 – Apr 2025*
-- Parsed daily logs from a **600-user lab** into queryable SQL tables, surfacing peak-volume windows.
-- Built a SQL **incident-tracking database** isolating ~15 testing stations silently dropping network connections.
+**Graduate Assistant, Systems Data Operations** · University of Houston · *Dec 2024 to Apr 2025*
+- Wrote Python to turn daily logs from a 600 user lab into queryable SQL tables.
+- Built an incident tracking database from error logs that pinned down about 15 machines quietly dropping connections.
 
-**Data Analyst** · Zensar Technologies · *Mar 2023 – Apr 2024*
-- Replaced a manual Excel process with **Python (Pandas)** — cut daily prep from **~3 hrs to under 20 min**.
-- SQL validation (CTEs, window functions) across **5 source systems**, flagging ~150 bad records weekly; Power BI SLA dashboards cut ad-hoc requests **~15/wk to 2–3**.
+**Data Analyst** · Zensar Technologies · *Mar 2023 to Apr 2024*
+- Replaced a manual Excel process with a Python script and took daily report prep from roughly 3 hours to under 20 minutes.
+- Wrote SQL validation across 5 source systems that caught around 150 bad records a week before they hit the dashboards, and built Power BI SLA reports that dropped ad hoc requests from about 15 a week to 2 or 3.
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=rect&height=3&color=0:1ba1e3,50:9168cf,100:ec5f78&animation=twinkling"/>
 
@@ -108,5 +98,4 @@ Processed **3.3M US DOT records into ~1.1M clean rows** with Apache Spark, power
   <img height="165" src="https://github-readme-streak-stats.herokuapp.com/?user=narasimha-31&hide_border=true&theme=tokyonight&ring=9168cf&fire=ec5f78&currStreakLabel=24A99F"/>
 </p>
 
-<!-- ===== ANIMATED ACTIVITY GRAPH (your data flow — draws itself) ===== -->
 <img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=narasimha-31&bg_color=0d1117&color=24A99F&line=9168cf&point=ec5f78&area=true&hide_border=true"/>
