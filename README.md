@@ -1,9 +1,8 @@
-<!-- ===== ANIMATED HEADER (fade-in, Gemini gradient) ===== -->
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=200&color=0:1ba1e3,50:9168cf,100:ec5f78&text=Narasimha%20Royal&fontColor=ffffff&fontSize=50&fontAlignY=38&animation=fadeIn&desc=Data%20Engineer%20%E2%80%94%20Pipeline%20Builder&descSize=20&descAlignY=58"/>
+![gitartwork](gitartwork.svg)
 
-<!-- ===== CUSTOM ANIMATED DATA PIPELINE (your signature — commit data-pipeline.svg to repo root) ===== -->
+<!-- ===== CUSTOM ANIMATED DATA PIPELINE (your signature) ===== -->
 <p align="center">
-  <img width="100%" src="https://raw.githubusercontent.com/narasimha-31/narasimha-31/main/data-pipeline.svg" alt="Live data pipeline: Sources to Kafka to Airflow to dbt to Postgres"/>
+  <img width="100%" src="data-pipeline.svg" alt="Live data pipeline: Sources to Kafka to Airflow to dbt to Postgres"/>
 </p>
 
 <!-- ===== ANIMATED TYPING LINE ===== -->
@@ -111,5 +110,3 @@ Processed **3.3M US DOT records into ~1.1M clean rows** with Apache Spark, power
 
 <!-- ===== ANIMATED ACTIVITY GRAPH (your data flow — draws itself) ===== -->
 <img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=narasimha-31&bg_color=0d1117&color=24A99F&line=9168cf&point=ec5f78&area=true&hide_border=true"/>
-
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=120&color=0:ec5f78,50:9168cf,100:1ba1e3&section=footer&animation=fadeIn"/>
