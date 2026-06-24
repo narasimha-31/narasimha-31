@@ -75,21 +75,7 @@ Cut 3.3M rows of US DOT airline data down to about 1.1M clean records with Spark
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=rect&height=3&color=0:1ba1e3,50:9168cf,100:ec5f78&animation=twinkling"/>
 
-## Experience
 
-**Instructional Assistant, Data Systems & Analytics** · University of Houston · *Apr 2025 to May 2026*
-- Designed and migrated the database schema for a nonprofit client (ESCH), turning scattered records into one clean reporting layer.
-- Reviewed SQL and database design for around 15 student project teams, and wrote a Python script that checks their query output and run times against a reference schema.
-
-**Graduate Assistant, Systems Data Operations** · University of Houston · *Dec 2024 to Apr 2025*
-- Wrote Python to turn daily logs from a 600 user lab into queryable SQL tables.
-- Built an incident tracking database from error logs that pinned down about 15 machines quietly dropping connections.
-
-**Data Analyst** · Zensar Technologies · *Mar 2023 to Apr 2024*
-- Replaced a manual Excel process with a Python script and took daily report prep from roughly 3 hours to under 20 minutes.
-- Wrote SQL validation across 5 source systems that caught around 150 bad records a week before they hit the dashboards, and built Power BI SLA reports that dropped ad hoc requests from about 15 a week to 2 or 3.
-
-<img width="100%" src="https://capsule-render.vercel.app/api?type=rect&height=3&color=0:1ba1e3,50:9168cf,100:ec5f78&animation=twinkling"/>
 
 ## Stats & Activity
 
