@@ -1,7 +1,7 @@
 ![gitartwork](gitartwork.svg)
 
 <p align="center">
-  <img width="100%" src="data-pipeline.svg" alt="Data pipeline: sources, Kafka, Airflow, dbt, Postgres"/>
+  <img width="100%" src="data-pipeline.svg" alt="Narasimha Royal — Data Analyst"/>
 </p>
 
 <p align="center">
@@ -15,11 +15,11 @@
 
 ## About Me
 
-I'm a data engineer in Houston. I started out in analytics and moved into building the pipelines that sit behind the dashboards. Most of my day is Python and SQL: getting data out of messy sources and into clean, well modeled tables that people can actually query.
+I'm a data analyst in Houston. My job is turning messy, multi-source data into numbers people can actually make decisions on, and I care most about the part most people skip: making sure those numbers are right before anyone bets on them.
 
-Lately I work mostly with Kafka, Airflow, and dbt, building batch and streaming pipelines on a bronze / silver / gold layout. I'm fairly opinionated about data quality, so I lean on Great Expectations checks, dead letter queues, and schema validation to stop bad rows before they reach a report.
+That matters more in the AI era, not less. A prompt can write the query and draw the chart, but it can't tell you the chart is lying. That gap is where I work: framing what the numbers mean, deciding which one to trust, and turning it into a call a stakeholder can act on.
 
-So far I've shipped pipelines handling anywhere from 500K to 44M+ rows across government APIs, e-commerce reviews, and enterprise delivery data.
+Most of my day is **Python** and **SQL**: validation queries, reconciliation checks, and BI reporting. When a project needs the pipeline underneath, I build that too, which is where the engineering tools below come in.
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=rect&height=3&color=0:1ba1e3,50:9168cf,100:ec5f78&animation=twinkling"/>
 
@@ -29,53 +29,50 @@ So far I've shipped pipelines handling anywhere from 500K to 44M+ rows across go
 <p>
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
   <img src="https://img.shields.io/badge/SQL-005C84?style=for-the-badge&logo=postgresql&logoColor=white"/>
-  <img src="https://img.shields.io/badge/PySpark-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white"/>
 </p>
 
-**Orchestration & Pipelines**
+**Analytics & BI**
 <p>
-  <img src="https://img.shields.io/badge/Apache%20Kafka-231F20?style=for-the-badge&logo=apachekafka&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Apache%20Airflow-017CEE?style=for-the-badge&logo=apacheairflow&logoColor=white"/>
-  <img src="https://img.shields.io/badge/dbt-FF694B?style=for-the-badge&logo=dbt&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Great%20Expectations-FF6310?style=for-the-badge&logo=greatexpectations&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=tableau&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Excel-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white"/>
 </p>
 
-**Storage & Warehouse**
+**Databases & Warehouse**
 <p>
   <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white"/>
   <img src="https://img.shields.io/badge/Snowflake-29B5E8?style=for-the-badge&logo=snowflake&logoColor=white"/>
   <img src="https://img.shields.io/badge/BigQuery-669DF6?style=for-the-badge&logo=googlebigquery&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Databricks-FF3621?style=for-the-badge&logo=databricks&logoColor=white"/>
+  <img src="https://img.shields.io/badge/AWS%20RDS-527FFF?style=for-the-badge&logo=amazonrds&logoColor=white"/>
 </p>
 
-**Cloud & Visualization**
+**Pipelines & Data Quality**
 <p>
-  <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Google%20Cloud-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black"/>
-  <img src="https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=tableau&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Apache%20Airflow-017CEE?style=for-the-badge&logo=apacheairflow&logoColor=white"/>
+  <img src="https://img.shields.io/badge/dbt-FF694B?style=for-the-badge&logo=dbt&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Apache%20Kafka-231F20?style=for-the-badge&logo=apachekafka&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Great%20Expectations-FF6310?style=for-the-badge&logo=greatexpectations&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
 </p>
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=rect&height=3&color=0:1ba1e3,50:9168cf,100:ec5f78&animation=twinkling"/>
 
 ## Projects
 
-### [Semiconductor Supply Chain Intelligence Platform](https://github.com/narasimha-31)
-A streaming pipeline that pulls semiconductor trade and regulatory data from three US government APIs (Census Trade, Federal Register, SEC EDGAR) into PostgreSQL through Kafka. dbt handles the downstream models, Great Expectations catches schema changes before they break anything, and the whole stack runs in Docker.
-> `Python` `Kafka` `Airflow` `PostgreSQL` `dbt` `Great Expectations` `Docker`
+### [Semiconductor Supply Chain Intelligence Platform](https://github.com/narasimha-31/semiconductor_dataengineering)
+Ask a supply-chain question in plain English, get an answer computed live from 16 years of US government data. A pipeline pulls three government APIs (Census Trade, Federal Register, SEC EDGAR) through Kafka into a PostgreSQL warehouse modeled with dbt, gated by Great Expectations, and reconciled to **0.00% variance** against published federal totals. A guardrailed text-to-SQL chatbot on BigQuery serves the answers, including quantifying a **29.7% drop** in US memory-chip imports after the Oct 2022 export controls.
+> `Python` `SQL` `Kafka` `Airflow` `PostgreSQL` `dbt` `BigQuery` `Great Expectations` `Docker`
 
-### [Amazon Review Sentiment Analysis Pipeline](https://github.com/narasimha-31/Amazon_Reviews_ETL_Analytics)
-An Airflow pipeline that loads 44.2M Amazon reviews into PostgreSQL with keyset pagination so it doesn't fall over on the volume. Malformed rows get routed to a dead letter queue (about 6,200 of them), and a sentiment model on the gold layer flags reviewer accounts that look fake.
+### [Amazon Review Sentiment Analysis](https://github.com/narasimha-31/Amazon_Reviews_ETL_Analytics)
+Analyzed **44.2M Amazon reviews** through a Bronze → Silver → Gold PostgreSQL warehouse, with a dead-letter queue isolating ~6,200 malformed rows so bad data never reached reporting. A fake-review risk model flagged **1,037 suspicious reviewers** across 3.2M profiles, surfaced in a 3-page Power BI dashboard.
 > `Python` `PostgreSQL` `Airflow` `Docker` `VADER` `Power BI`
 
 ### [Airline Traffic Analysis](https://github.com/narasimha-31/Airline_Data_Analysis)
-Cut 3.3M rows of US DOT airline data down to about 1.1M clean records with Spark, then built a Tableau view covering 34 years of passenger and cargo trends by quarter and carrier.
+Cleaned **3.3M rows** of US DOT airline data down to ~1.1M reliable records with Spark, then built a Tableau view covering **34 years** of passenger and cargo trends by quarter and carrier.
 > `PySpark` `Python` `Tableau`
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=rect&height=3&color=0:1ba1e3,50:9168cf,100:ec5f78&animation=twinkling"/>
-
-
 
 ## Stats & Activity
 
