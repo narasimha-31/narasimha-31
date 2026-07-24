@@ -60,7 +60,7 @@ Most of my day is **Python** and **SQL**: validation queries, reconciliation che
 
 ## Projects
 
-### [Tesla Energy - Warehouse Inventory Analytics](https://github.com/narasimha-31/tesla-energy-inventory-analytics)
+### [Tesla Energy - Warehouse Inventory Analytics](https://github.com/narasimha-31/tesla_energy_inventory_analytics)
 A three-page Power BI dashboard on a PostgreSQL star schema, tracking inventory across Tesla's energy storage factories. The quarterly totals are real, taken from Tesla's SEC filings; the daily warehouse movements are simulated in Python and constrained so every quarter sums back to the exact figure Tesla reported. One page each for operations, leadership, and finance, so every audience sees only the answers they actually ask for.
 > `Python` `PostgreSQL` `Power BI (DAX)` `SQL`
 
