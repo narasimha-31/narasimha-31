@@ -60,11 +60,11 @@ Most of my day is **Python** and **SQL**: validation queries, reconciliation che
 
 ## Projects
 
-### [Tesla Energy — Warehouse Inventory Analytics](https://github.com/narasimha-31/tesla-energy-inventory-analytics)
+### [Tesla Energy - Warehouse Inventory Analytics](https://github.com/narasimha-31/tesla-energy-inventory-analytics)
 A three-page Power BI dashboard on a PostgreSQL star schema, tracking inventory across Tesla's energy storage factories. The quarterly totals are real, taken from Tesla's SEC filings; the daily warehouse movements are simulated in Python and constrained so every quarter sums back to the exact figure Tesla reported. One page each for operations, leadership, and finance, so every audience sees only the answers they actually ask for.
 > `Python` `PostgreSQL` `Power BI (DAX)` `SQL`
 
-### [Semiconductor Supply Chain Pipeline](https://github.com/narasimha-31/semiconductor_dataengineering)
+### [Semiconductor Supply Chain Analytics Pipeline](https://github.com/narasimha-31/semiconductor_dataengineering)
 Ask a supply-chain question in plain English, get an answer computed live from 16 years of US government data. A pipeline pulls three government APIs (Census Trade, Federal Register, SEC EDGAR) through Kafka into a PostgreSQL warehouse modeled with dbt, gated by Great Expectations, and reconciled to **0.00% variance** against published federal totals. A Grok-powered text-to-SQL chatbot on BigQuery serves the answers behind strict guardrails, including quantifying a **29.7% drop** in US memory-chip imports after the Oct 2022 export controls.
 > `Python` `SQL` `Kafka` `Airflow` `PostgreSQL` `dbt` `BigQuery` `Grok AI` `Great Expectations` `Docker`
 
