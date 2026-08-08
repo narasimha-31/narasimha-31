@@ -1,8 +1,6 @@
 ![gitartwork](gitartwork.svg)
 
-<p align="center">
-  <img width="100%" src="data-pipeline.svg" alt="Narasimha Royal — Data Analyst"/>
-</p>
+
 
 <p align="center">
   <a href="https://www.linkedin.com/in/narasimha31/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
