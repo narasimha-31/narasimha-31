@@ -1,0 +1,8 @@
+# Vendored font for scripts/ascii_portrait.py — fetch per the script's error message
+scripts/fonts/
+
+# Source photo for the ASCII portrait; ascii.svg is committed as the artifact
+profile_pic.png
+
+__pycache__/
+*.pyc
