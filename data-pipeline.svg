@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 300" width="1060" height="300" fill="none" role="img" aria-label="Narasimha Royal, Data Analyst. From messy data to trusted decisions: sources, SQL, validation, modeling, insight, decision.">
   <defs>
+    <style id="fontkit">@font-face{font-family:'Pipe800';font-style:normal;font-weight:800;src:url(data:font/woff2;base64,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) format('woff2');}@font-face{font-family:'Pipe600';font-style:normal;font-weight:600;src:url(data:font/woff2;base64,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) format('woff2');}@font-face{font-family:'Pipe500';font-style:normal;font-weight:500;src:url(data:font/woff2;base64,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) format('woff2');}</style>
     <linearGradient id="gem" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#1ba1e3"/>
       <stop offset="0.5" stop-color="#9168cf"/>
@@ -9,9 +10,9 @@
 
   <!-- ===== NAME + TITLE ===== -->
   <text x="530" y="44" text-anchor="middle" fill="url(#gem)" font-size="38" font-weight="800"
-        font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif" letter-spacing="2">NARASIMHA ROYAL</text>
+        font-family="'Pipe800',monospace" letter-spacing="2">NARASIMHA ROYAL</text>
   <text x="530" y="72" text-anchor="middle" fill="#8b949e" font-size="14" font-weight="600"
-        font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif" letter-spacing="5">DATA ANALYST &#160;&#183;&#160; PYTHON &#160;&#183;&#160; SQL &#160;&#183;&#160; BI</text>
+        font-family="'Pipe600',monospace" letter-spacing="5">DATA ANALYST &#160;&#183;&#160; PYTHON &#160;&#183;&#160; SQL &#160;&#183;&#160; BI</text>
 
   <!-- ===== DOTTED CONNECTORS between cards (marching dots) ===== -->
   <g stroke="url(#gem)" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="0.1 9">
@@ -34,9 +35,9 @@
   </circle>
   <rect x="378" y="226" width="136" height="42" rx="9" fill="#0d1117" stroke="#ec5f78" stroke-width="1.4"/>
   <text x="446" y="243" text-anchor="middle" fill="#ec8a9c" font-size="11.5" font-weight="800"
-        font-family="'Segoe UI',Roboto,sans-serif">~150 BAD ROWS</text>
+        font-family="'Pipe800',monospace">~150 BAD ROWS</text>
   <text x="446" y="259" text-anchor="middle" fill="#b9707e" font-size="10" font-weight="600"
-        font-family="'Segoe UI',Roboto,sans-serif" letter-spacing="1">CAUGHT WEEKLY</text>
+        font-family="'Pipe600',monospace" letter-spacing="1">CAUGHT WEEKLY</text>
 
   <!-- ===== STAGE CARDS ===== -->
   <g font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
@@ -44,47 +45,47 @@
     <g>
       <rect x="50" y="110" width="120" height="72" rx="12" fill="#0d1117" stroke="url(#gem)" stroke-width="1.8"/>
       <rect x="62" y="121" width="96" height="3.5" rx="2" fill="#1ba1e3"/>
-      <text x="110" y="152" text-anchor="middle" fill="#e6edf3" font-size="15" font-weight="800">SOURCES</text>
-      <text x="110" y="170" text-anchor="middle" fill="#8b949e" font-size="10.5" font-weight="500">APIs &#183; files &#183; DB</text>
+      <text x="110" y="152" text-anchor="middle" fill="#e6edf3" font-size="15" font-weight="800" font-family="'Pipe800',monospace">SOURCES</text>
+      <text x="110" y="170" text-anchor="middle" fill="#8b949e" font-size="10.5" font-weight="500" font-family="'Pipe500',monospace">APIs &#183; files &#183; DB</text>
     </g>
     <!-- SQL -->
     <g>
       <rect x="218" y="110" width="120" height="72" rx="12" fill="#0d1117" stroke="url(#gem)" stroke-width="1.8"/>
       <rect x="230" y="121" width="96" height="3.5" rx="2" fill="#4f8fde"/>
-      <text x="278" y="152" text-anchor="middle" fill="#e6edf3" font-size="15" font-weight="800">SQL</text>
-      <text x="278" y="170" text-anchor="middle" fill="#8b949e" font-size="10.5" font-weight="500">extract &#183; join</text>
+      <text x="278" y="152" text-anchor="middle" fill="#e6edf3" font-size="15" font-weight="800" font-family="'Pipe800',monospace">SQL</text>
+      <text x="278" y="170" text-anchor="middle" fill="#8b949e" font-size="10.5" font-weight="500" font-family="'Pipe500',monospace">extract &#183; join</text>
     </g>
     <!-- VALIDATE (highlighted differentiator) -->
     <g>
       <rect x="386" y="110" width="120" height="72" rx="12" fill="#161b22" stroke="#9168cf" stroke-width="2.4"/>
       <rect x="398" y="121" width="96" height="3.5" rx="2" fill="#9168cf"/>
-      <text x="446" y="152" text-anchor="middle" fill="#c9b6ff" font-size="15" font-weight="800">VALIDATE</text>
-      <text x="446" y="170" text-anchor="middle" fill="#a9b1bb" font-size="10.5" font-weight="500">quality &#183; reconcile</text>
+      <text x="446" y="152" text-anchor="middle" fill="#c9b6ff" font-size="15" font-weight="800" font-family="'Pipe800',monospace">VALIDATE</text>
+      <text x="446" y="170" text-anchor="middle" fill="#a9b1bb" font-size="10.5" font-weight="500" font-family="'Pipe500',monospace">quality &#183; reconcile</text>
     </g>
     <!-- MODEL -->
     <g>
       <rect x="554" y="110" width="120" height="72" rx="12" fill="#0d1117" stroke="url(#gem)" stroke-width="1.8"/>
       <rect x="566" y="121" width="96" height="3.5" rx="2" fill="#c861a8"/>
-      <text x="614" y="152" text-anchor="middle" fill="#e6edf3" font-size="15" font-weight="800">MODEL</text>
-      <text x="614" y="170" text-anchor="middle" fill="#8b949e" font-size="10.5" font-weight="500">clean tables</text>
+      <text x="614" y="152" text-anchor="middle" fill="#e6edf3" font-size="15" font-weight="800" font-family="'Pipe800',monospace">MODEL</text>
+      <text x="614" y="170" text-anchor="middle" fill="#8b949e" font-size="10.5" font-weight="500" font-family="'Pipe500',monospace">clean tables</text>
     </g>
     <!-- INSIGHT -->
     <g>
       <rect x="722" y="110" width="120" height="72" rx="12" fill="#0d1117" stroke="url(#gem)" stroke-width="1.8"/>
       <rect x="734" y="121" width="96" height="3.5" rx="2" fill="#ec5f78"/>
-      <text x="782" y="152" text-anchor="middle" fill="#e6edf3" font-size="15" font-weight="800">INSIGHT</text>
-      <text x="782" y="170" text-anchor="middle" fill="#8b949e" font-size="10.5" font-weight="500">Power BI &#183; Tableau</text>
+      <text x="782" y="152" text-anchor="middle" fill="#e6edf3" font-size="15" font-weight="800" font-family="'Pipe800',monospace">INSIGHT</text>
+      <text x="782" y="170" text-anchor="middle" fill="#8b949e" font-size="10.5" font-weight="500" font-family="'Pipe500',monospace">Power BI &#183; Tableau</text>
     </g>
     <!-- DECISION -->
     <g>
       <rect x="890" y="110" width="120" height="72" rx="12" fill="#0d1117" stroke="url(#gem)" stroke-width="1.8"/>
       <rect x="902" y="121" width="96" height="3.5" rx="2" fill="#e8c15a"/>
-      <text x="950" y="152" text-anchor="middle" fill="#eed384" font-size="15" font-weight="800">DECISION</text>
-      <text x="950" y="170" text-anchor="middle" fill="#8b949e" font-size="10.5" font-weight="500">people act on it</text>
+      <text x="950" y="152" text-anchor="middle" fill="#eed384" font-size="15" font-weight="800" font-family="'Pipe800',monospace">DECISION</text>
+      <text x="950" y="170" text-anchor="middle" fill="#8b949e" font-size="10.5" font-weight="500" font-family="'Pipe500',monospace">people act on it</text>
     </g>
   </g>
 
   <!-- ===== CAPTION ===== -->
   <text x="530" y="290" text-anchor="middle" fill="#6b7682" font-size="11.5" letter-spacing="2" font-weight="600"
-        font-family="'Segoe UI',Roboto,sans-serif">MESSY DATA &#8594; VALIDATED &#8594; MODELED &#8594; INSIGHT &#8594; DECISION</text>
+        font-family="'Pipe600',monospace">MESSY DATA &#8594; VALIDATED &#8594; MODELED &#8594; INSIGHT &#8594; DECISION</text>
 </svg>

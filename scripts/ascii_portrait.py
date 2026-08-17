@@ -111,7 +111,10 @@ def subset_font():
     options.notdef_outline = False
     options.drop_tables += ["FFTM"]
 
-    font = TTFont(FONT_PATH)
+    # Pinned timestamp, matching scripts/fontkit.py: fontTools would otherwise
+    # stamp "modified" with the current time and every rebuild would differ.
+    font = TTFont(FONT_PATH, recalcTimestamp=False)
+    font["head"].created = font["head"].modified = 3_600_000_000
     subsetter = subset.Subsetter(options=options)
     subsetter.populate(text=RAMP)     # equivalent to pyftsubset --text=" :+#@"
     subsetter.subset(font)

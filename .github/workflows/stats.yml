@@ -1,0 +1,63 @@
+name: stats
+
+on:
+  schedule:
+    # 06:17 UTC. Off the hour on purpose: jobs queued at :00 are the first
+    # dropped when GitHub's scheduler is under load.
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stats
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Regenerate profile SVGs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install --quiet fonttools brotli
+
+      - name: Fetch fonts
+        run: python scripts/fetch_fonts.py
+
+      - name: Generate
+        env:
+          GH_STATS_TOKEN: ${{ secrets.GH_STATS_TOKEN }}
+        run: |
+          python scripts/stats.py
+          python scripts/headings.py
+          python scripts/fix_pipeline.py
+        # ascii_portrait.py is deliberately not run here: it needs
+        # profile_pic.png, which is gitignored, and the portrait is derived
+        # from a static photo so it never changes between runs. Regenerate it
+        # locally if the source photo is ever replaced.
+
+      - name: Commit changed files only
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- '*.svg'
+          # --quiet exits non-zero when the index differs from HEAD, so this
+          # commits only when a generated file's content actually moved. The
+          # generators emit no timestamps, which is what keeps identical data
+          # byte-identical and stops this filling history with no-op commits.
+          if git diff --cached --quiet; then
+            echo "no SVG changed"
+          else
+            git diff --cached --name-only | sed 's/^/  changed: /'
+            git commit -m "chore: refresh profile SVGs"
+            # Pushes with the default GITHUB_TOKEN. A PAT here would re-trigger
+            # gitartwork.yml on every run, which pushes again -- a loop.
+            git push
+          fi

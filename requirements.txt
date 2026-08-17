@@ -1,0 +1,3 @@
+fonttools>=4.54
+brotli>=1.1
+pillow>=11.0
