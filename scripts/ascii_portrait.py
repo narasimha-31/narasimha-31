@@ -25,8 +25,15 @@ GAMMA = 1.3             # >1 lifts midtones toward the quiet end of the ramp
 CONTRAST = 1.15         # ImageEnhance.Contrast factor, applied after autocontrast
 RAMP = " :+#@"          # quiet -> loud; inverted below so dark pixels are loud
 CROP_THRESHOLD = 245    # pixels darker than this count as subject when cropping
+SUBJECT_KEEP = 0.78     # keep only the top fraction of the subject, so the head fills the frame
 
 AUTOCONTRAST_CUTOFF = 1  # percent clipped off each end of the histogram
+
+# --- Reveal animation -------------------------------------------------------
+# Per row, not per character: 70 columns x 29 rows would be 2030 elements.
+
+REVEAL_DUR = 0.35       # seconds for one row to wipe in
+REVEAL_STAGGER = 0.045  # seconds between consecutive row starts
 
 # --- Typography -------------------------------------------------------------
 # JetBrains Mono advances 600/1000 em per glyph. Rows must be squashed by
@@ -38,8 +45,11 @@ FONT_SIZE = 11
 LINE_HEIGHT = 1.10
 ADVANCE_WIDTH = 0.600
 
-FILL_DARK = "#c9d1d9"   # default, for GitHub's dark theme
-FILL_LIGHT = "#24292f"  # swapped in under prefers-color-scheme: light
+# One mid-tone fill, no prefers-color-scheme query. An <img>-loaded SVG reads the
+# OS theme, not GitHub's site theme, so the query hands light-OS/dark-GitHub
+# visitors an unreadable portrait. This holds on both grounds: 4.58:1 on GitHub
+# dark (#0d1117), 4.13:1 on white.
+FILL = "#9168cf"
 
 
 def load_subject(path):
@@ -55,6 +65,10 @@ def load_subject(path):
     bbox = mask.getbbox()
     if bbox is None:
         raise SystemExit(f"{path}: no pixels darker than {CROP_THRESHOLD}; nothing to crop to")
+
+    # Then keep only the top slice of the subject so the head fills the frame.
+    left, top, right, bottom = bbox
+    bbox = (left, top, right, top + int((bottom - top) * SUBJECT_KEEP))
 
     return gray.crop(bbox), bbox
 
@@ -115,6 +129,12 @@ def build_svg(lines):
     height = round(len(lines) * step, 2)
     font_b64 = base64.b64encode(subset_font()).decode("ascii")
 
+    # Literal per-row delays. "not all and" rather than the Media Queries 4 form
+    # "not (...)", which older engines fail to parse -- same meaning, wider support.
+    delays = "".join(
+        f".r{i}{{animation-delay:{i * REVEAL_STAGGER:.3f}s}}" for i in range(len(lines))
+    )
+
     out = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
         f'viewBox="0 0 {width} {height}" role="img" aria-label="ASCII portrait">',
@@ -124,14 +144,21 @@ def build_svg(lines):
         f"src:url(data:font/woff2;base64,{font_b64}) format('woff2');"
         "}",
         f"text{{font-family:'{FONT_FAMILY}',monospace;font-size:{FONT_SIZE}px;"
-        f"white-space:pre;fill:{FILL_DARK};}}",
-        f"@media (prefers-color-scheme: light){{text{{fill:{FILL_LIGHT};}}}}",
+        f"white-space:pre;fill:{FILL};opacity:1}}",
+        "@keyframes reveal{"
+        "from{opacity:0;clip-path:inset(0 100% 0 0)}"
+        "to{opacity:1;clip-path:inset(0 0 0 0)}"
+        "}",
+        "@media not all and (prefers-reduced-motion: reduce){"
+        f"text{{opacity:0;animation:reveal {REVEAL_DUR}s ease-out forwards}}"
+        f"{delays}"
+        "}",
         "</style>",
     ]
     for i, line in enumerate(lines):
         y = round(i * step, 2)
         out.append(
-            f'<text x="0" y="{y}" xml:space="preserve" '
+            f'<text class="r{i}" x="0" y="{y}" xml:space="preserve" '
             f'dominant-baseline="hanging">{escape(line)}</text>'
         )
     out.append("</svg>")
