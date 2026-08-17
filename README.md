@@ -27,7 +27,7 @@ Most of my day is **Python** and **SQL**: validation queries, reconciliation che
 `Power BI` `Tableau` `Pandas` `Excel`
 
 **Databases & Warehouse**
-`PostgreSQL` `Snowflake` `BigQuery` `AWS RDS`
+`PostgreSQL`  `BigQuery` `Oracle` `Databricks`
 
 **Pipelines & Data Quality**
 `Apache Airflow` `dbt` `Apache Kafka` `Great Expectations` `Docker`
