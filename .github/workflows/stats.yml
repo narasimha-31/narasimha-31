@@ -37,7 +37,7 @@ jobs:
         run: |
           python scripts/stats.py
           python scripts/headings.py
-          python scripts/fix_pipeline.py
+          python scripts/pipeline.py
         # ascii_portrait.py is deliberately not run here: it needs
         # profile_pic.png, which is gitignored, and the portrait is derived
         # from a static photo so it never changes between runs. Regenerate it
