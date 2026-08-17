@@ -125,14 +125,23 @@ def build():
     )
 
     # A connector per gap: static rail, then dots running along it.
+    #
+    # Solid colors, NOT url(#gem). A horizontal line has zero height, so its
+    # object bounding box is degenerate, and an objectBoundingBox gradient on a
+    # degenerate box is not painted at all -- the connectors rendered as
+    # nothing. Each gap instead takes the blend of the two cards it joins, so
+    # the run of connectors still walks the gradient across the banner.
+    from stats import _lerp
+
     for i in range(len(STAGES) - 1):
         x1 = card_x(i) + CARD_W + 3
         x2 = card_x(i + 1) - 3
+        color = _lerp(colors[i], colors[i + 1], 0.5)
         parts.append(
             f'<line x1="{x1}" y1="{MID_Y}" x2="{x2}" y2="{MID_Y}" '
-            f'stroke="url(#gem)" stroke-width="1.5" opacity="0.28"/>'
+            f'stroke="{color}" stroke-width="1.5" opacity="0.35"/>'
             f'<line class="flow" x1="{x1}" y1="{MID_Y}" x2="{x2}" y2="{MID_Y}" '
-            f'stroke="url(#gem)" stroke-width="4.5" stroke-linecap="round" '
+            f'stroke="{color}" stroke-width="4.5" stroke-linecap="round" '
             f'stroke-dasharray="0.1 9"/>'
         )
 
