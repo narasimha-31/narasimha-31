@@ -6,10 +6,9 @@
 Replaces the hand-authored file and the regex patcher that used to retrofit
 fonts into it. Every word is the original wording. What changed:
 
-  flow        one unbroken spine from SOURCES to DECISION with a stub down
-              from each stage, instead of five separate segments between the
-              cards. Five dashes read as six disconnected hops; a pipeline is
-              one line, and the reject branch now leaves from that line
+  flow        a connector per gap at card height, left to right: a faint
+              static rail with small dots travelling along it. The rail is
+              what you see at rest, the dots are the flow
   colors      sixteen ad-hoc hexes down to the shared palette
   theme       no hardcoded #0d1117 card fill or #e6edf3 text, so the card
               sits on light and dark grounds instead of looking like a dark
@@ -52,18 +51,15 @@ BAD_ROWS = ("~150 BAD ROWS", "CAUGHT WEEKLY")
 # 119.7 -- it touched both borders of a 120 card. Widening the card keeps the
 # label at a readable size instead of shrinking type to fit.
 CARD_W, CARD_H, GAP = 132, 74, 36
-CARD_Y = 88
+CARD_Y = 110
 GRID_X = 44
 
-# One unbroken spine under the cards rather than five separate segments between
-# them. Five dashes read as six disconnected hops; a single line reads as one
-# pipeline, and it gives the reject branch something to actually branch from.
-# The spine sits below the cards because they are fill="none" -- with no opaque
-# background to hide behind, a line at card mid-height would cut through the
-# stage titles.
-SPINE_Y = 190
-STUB_TOP = CARD_Y + CARD_H
-BOX_Y, BOX_W, BOX_H = 222, 136, 42
+# Connectors sit at card height, one per gap, running left to right between
+# adjacent cards. Each gap is a faint static rail with small dots travelling
+# along it: the rail is what you see at rest, the dots are the flow.
+MID_Y = CARD_Y + CARD_H / 2
+BRANCH_TOP = CARD_Y + CARD_H
+BOX_Y, BOX_W, BOX_H = 224, 136, 42
 
 
 def card_x(i):
@@ -104,63 +100,51 @@ def build():
         "@keyframes fall{"
         "0%{transform:translateY(0);opacity:0}"
         "12%{opacity:1}88%{opacity:1}"
-        "100%{transform:translateY(32px);opacity:0}}"
+        "100%{transform:translateY(40px);opacity:0}}"
         "@media not all and (prefers-reduced-motion: reduce){"
         "g.card{opacity:0;animation:rise .5s ease-out forwards}"
         + "".join(f"g.c{i}{{animation-delay:{i * 0.08:.2f}s}}" for i in range(len(STAGES)))
         + # 2.4s, not 0.55s. Dots sprinting between stages read as busy;
         # a slow drift reads as flow.
-        "line.flow{animation:march 2.4s linear infinite}"
-        "circle.drop{animation:fall 3.6s linear infinite}"
-        "circle.d2{animation-delay:1.8s}"
+        "line.flow{animation:march 1.1s linear infinite}"
+        "circle.drop{animation:fall 2.6s linear infinite}"
+        "circle.d2{animation-delay:1.3s}"
         "}",
         "</style>",
     ]
 
     parts.append(
-        f'<text x="{W / 2}" y="40" text-anchor="middle" fill="url(#gem)" font-size="38" '
+        f'<text x="{W / 2}" y="46" text-anchor="middle" fill="url(#gem)" font-size="38" '
         f'font-weight="800" font-family={faces[800].stack()!r} letter-spacing="2">'
         f"{escape(NAME)}</text>"
     )
     parts.append(
-        f'<text x="{W / 2}" y="68" text-anchor="middle" fill="{palette.DIM}" font-size="14" '
+        f'<text x="{W / 2}" y="74" text-anchor="middle" fill="{palette.DIM}" font-size="14" '
         f'font-weight="600" font-family={faces[600].stack()!r} letter-spacing="5">'
         f"{escape(TAGLINE)}</text>"
     )
 
-    # The spine: SOURCES through to DECISION, one line, centre to centre.
-    spine_x1 = card_x(0) + CARD_W / 2
-    spine_x2 = card_x(len(STAGES) - 1) + CARD_W / 2
-    parts.append(
-        f'<line x1="{spine_x1}" y1="{SPINE_Y}" x2="{spine_x2}" y2="{SPINE_Y}" '
-        f'stroke="url(#gem)" stroke-width="2" opacity="0.4"/>'
-        f'<line class="flow" x1="{spine_x1}" y1="{SPINE_Y}" x2="{spine_x2}" y2="{SPINE_Y}" '
-        f'stroke="url(#gem)" stroke-width="4.5" stroke-linecap="round" '
-        f'stroke-dasharray="0.1 9"/>'
-    )
-    # Arrowhead, so the direction of flow is stated rather than implied.
-    parts.append(
-        f'<path d="M{spine_x2 + 2} {SPINE_Y} l-9 -5 v10 z" fill="{palette.PINK}" opacity="0.9"/>'
-    )
-
-    # Stubs dropping each card onto the spine.
-    for i in range(len(STAGES)):
-        sx = card_x(i) + CARD_W / 2
+    # A connector per gap: static rail, then dots running along it.
+    for i in range(len(STAGES) - 1):
+        x1 = card_x(i) + CARD_W + 3
+        x2 = card_x(i + 1) - 3
         parts.append(
-            f'<line x1="{sx}" y1="{STUB_TOP}" x2="{sx}" y2="{SPINE_Y}" '
-            f'stroke="{colors[i]}" stroke-width="1.6" opacity="0.5"/>'
-            f'<circle cx="{sx}" cy="{SPINE_Y}" r="3.5" fill="{colors[i]}"/>'
+            f'<line x1="{x1}" y1="{MID_Y}" x2="{x2}" y2="{MID_Y}" '
+            f'stroke="url(#gem)" stroke-width="1.5" opacity="0.28"/>'
+            f'<line class="flow" x1="{x1}" y1="{MID_Y}" x2="{x2}" y2="{MID_Y}" '
+            f'stroke="url(#gem)" stroke-width="4.5" stroke-linecap="round" '
+            f'stroke-dasharray="0.1 9"/>'
         )
 
-    # Reject branch, dropping off the spine at the validation gate.
+    # Reject branch, leaving the validation gate.
     parts.append(
-        f'<line x1="{validate_x}" y1="{SPINE_Y}" x2="{validate_x}" y2="{BOX_Y}" '
+        f'<line x1="{validate_x}" y1="{BRANCH_TOP}" x2="{validate_x}" y2="{BOX_Y}" '
         f'stroke="{palette.PINK}" stroke-width="2" stroke-dasharray="3 4" opacity="0.55"/>'
     )
     for n in range(2):
         cls = "drop" if n == 0 else "drop d2"
         parts.append(
-            f'<circle class="{cls}" r="3" cx="{validate_x}" cy="{SPINE_Y}" '
+            f'<circle class="{cls}" r="3" cx="{validate_x}" cy="{BRANCH_TOP}" '
             f'fill="{palette.PINK}" opacity="0"/>'
         )
 
