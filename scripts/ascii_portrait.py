@@ -3,13 +3,14 @@
 
     python scripts/ascii_portrait.py profile_pic.png ascii.svg
 
-The PNG is composited onto white before any grayscale conversion, cropped to
+The PNG is composited onto black before any grayscale conversion, cropped to
 the subject, downsampled to a character grid, and emitted as one <text> row
 per line with a subsetted JetBrains Mono inlined as base64 woff2.
 """
 
 import argparse
 import base64
+import colorsys
 import io
 from pathlib import Path
 from xml.sax.saxutils import escape
@@ -21,19 +22,27 @@ from fontTools.ttLib import TTFont
 # --- Tunables ---------------------------------------------------------------
 
 COLS = 70               # character columns in the output grid
-GAMMA = 1.3             # >1 lifts midtones toward the quiet end of the ramp
-CONTRAST = 1.15         # ImageEnhance.Contrast factor, applied after autocontrast
-RAMP = " :+#@"          # quiet -> loud; inverted below so dark pixels are loud
-CROP_THRESHOLD = 245    # pixels darker than this count as subject when cropping
-SUBJECT_KEEP = 0.78     # keep only the top fraction of the subject, so the head fills the frame
+GAMMA = 2.6             # >1 pushes midtones toward the quiet end of the ramp
+CONTRAST = 1.0          # ImageEnhance.Contrast factor, applied after autocontrast
+RAMP = " :+#@"          # quiet -> loud; bright pixels are loud
+ALPHA_THRESHOLD = 10    # alpha above this counts as subject when cropping
+SUBJECT_KEEP = 0.56     # keep only the top fraction of the subject, so the head fills the frame
+SUBJECT_WIDTH = 0.60    # and this fraction of its width, centred on the head
 
 AUTOCONTRAST_CUTOFF = 1  # percent clipped off each end of the histogram
 
 # --- Reveal animation -------------------------------------------------------
 # Per row, not per character: 70 columns x 29 rows would be 2030 elements.
 
-REVEAL_DUR = 0.35       # seconds for one row to wipe in
-REVEAL_STAGGER = 0.045  # seconds between consecutive row starts
+REVEAL_DUR = 0.11       # seconds for one row to wipe in
+REVEAL_STAGGER = 0.11   # seconds between consecutive row starts
+
+# Rows draw in white, then the photo's own colours fade in.
+TINT_COLORS = 10        # palette size
+TINT_FLOOR = 0.62       # darkest value a colour may have, so hair stays readable on the panel
+TINT_SATURATION = 1.25
+TINT_DUR = 1.4
+TINT_PAUSE = 0.3        # gap between the last row and the fade
 
 # --- Typography -------------------------------------------------------------
 # JetBrains Mono advances 600/1000 em per glyph. Rows must be squashed by
@@ -45,36 +54,48 @@ FONT_SIZE = 11
 LINE_HEIGHT = 1.10
 ADVANCE_WIDTH = 0.600
 
-# One mid-tone fill, no prefers-color-scheme query. An <img>-loaded SVG reads the
-# OS theme, not GitHub's site theme, so the query hands light-OS/dark-GitHub
-# visitors an unreadable portrait. This holds on both grounds: 4.58:1 on GitHub
-# dark (#0d1117), 4.13:1 on white.
-FILL = "#9168cf"
+# White text needs its own dark panel, or it vanishes on GitHub's light theme.
+FILL = "#ffffff"
+GROUND = "#0d1117"      # GitHub dark, so the panel vanishes on a dark page
+PAD = 18                # panel padding around the grid, px
+RADIUS = 12
 
 
 def load_subject(path):
-    """Composite onto white, grayscale, and crop to the subject's bounding box."""
+    """Composite onto black, grayscale, and crop to the subject's bounding box."""
     img = Image.open(path).convert("RGBA")
 
-    # Compositing first matters: .convert("L") straight off RGBA ignores alpha,
-    # so fully transparent pixels arrive as black and swamp the dark end of the ramp.
-    white = Image.new("RGBA", img.size, (255, 255, 255, 255))
-    gray = Image.alpha_composite(white, img).convert("L")
+    # Composite first, transparent pixels can carry any colour underneath.
+    black = Image.new("RGBA", img.size, (0, 0, 0, 255))
+    gray = Image.alpha_composite(black, img).convert("L")
 
-    mask = gray.point(lambda p: 255 if p < CROP_THRESHOLD else 0)
+    mask = img.getchannel("A").point(lambda p: 255 if p > ALPHA_THRESHOLD else 0)
     bbox = mask.getbbox()
     if bbox is None:
-        raise SystemExit(f"{path}: no pixels darker than {CROP_THRESHOLD}; nothing to crop to")
+        raise SystemExit(f"{path}: fully transparent; nothing to crop to")
 
     # Then keep only the top slice of the subject so the head fills the frame.
     left, top, right, bottom = bbox
+    head = mask.crop((left, top, right, top + (bottom - top) // 3)).getbbox()
+    centre = left + (head[0] + head[2]) / 2
+    half = (right - left) * SUBJECT_WIDTH / 2
+    left, right = max(left, round(centre - half)), min(right, round(centre + half))
     bbox = (left, top, right, top + int((bottom - top) * SUBJECT_KEEP))
 
-    return gray.crop(bbox), bbox
+    rgb = Image.alpha_composite(black, img).convert("RGB")
+    return gray.crop(bbox), rgb.crop(bbox), img.getchannel("A").crop(bbox), bbox
 
 
-def to_rows(gray):
-    """Downsample to the character grid and map each cell through the ramp."""
+def lift(rgb):
+    h, s, v = colorsys.rgb_to_hsv(*(c / 255 for c in rgb))
+    # near-black has no real hue, keep it grey
+    s = min(1.0, s * TINT_SATURATION) * min(1.0, v / 0.2)
+    v = TINT_FLOOR + (1 - TINT_FLOOR) * v
+    return tuple(round(c * 255) for c in colorsys.hsv_to_rgb(h, s, v))
+
+
+def to_rows(gray, rgb, alpha):
+    """Downsample to the character grid; return ramp rows, palette indexes and the palette."""
     width, height = gray.size
     rows = max(1, round(height * (COLS / width) * (ADVANCE_WIDTH / LINE_HEIGHT)))
 
@@ -82,14 +103,43 @@ def to_rows(gray):
     gray = ImageEnhance.Contrast(gray).enhance(CONTRAST)
     gray = gray.resize((COLS, rows), Image.LANCZOS)
 
+    solid = [a > 127 for a in alpha.resize((COLS, rows), Image.LANCZOS).getdata()]
+
+    tint = Image.new("RGB", (COLS, rows))
+    cells = rgb.resize((COLS, rows), Image.LANCZOS).getdata()
+    grey = lift((0, 0, 0))
+    tint.putdata([lift(c) if ok else grey for c, ok in zip(cells, solid)])
+    tint = tint.quantize(TINT_COLORS, method=Image.MEDIANCUT, dither=Image.NONE)
+    flat = tint.getpalette()
+    palette = [tuple(flat[i * 3:i * 3 + 3]) for i in range(TINT_COLORS)]
+    index = list(tint.getdata())
+
     last = len(RAMP) - 1
     pixels = list(gray.getdata())
-    lines = []
+    lines, tints = [], []
     for y in range(rows):
-        row = pixels[y * COLS:(y + 1) * COLS]
-        # Invert (dark -> loud), then gamma-correct the darkness.
-        lines.append("".join(RAMP[round(((255 - p) / 255) ** GAMMA * last)] for p in row))
-    return lines
+        chars = []
+        for x in range(COLS):
+            i = y * COLS + x
+            level = round((pixels[i] / 255) ** GAMMA * last)
+            # dark hair and clothes still get a mark, or they vanish into the panel
+            if solid[i]:
+                level = max(level, 1)
+            chars.append(RAMP[level])
+        lines.append("".join(chars))
+        tints.append(index[y * COLS:(y + 1) * COLS])
+    return lines, tints, palette
+
+
+def tint_runs(line, tint):
+    """Split a row into (palette index, text) runs; spaces ride along with the run before."""
+    runs = []
+    for ch, t in zip(line, tint):
+        if runs and (ch == " " or runs[-1][0] == t):
+            runs[-1][1] += ch
+        else:
+            runs.append([t if ch != " " else -1, ch])
+    return runs
 
 
 def subset_font():
@@ -126,10 +176,10 @@ def subset_font():
     return buf.getvalue()
 
 
-def build_svg(lines):
-    width = round(COLS * FONT_SIZE * ADVANCE_WIDTH, 2)
+def build_svg(lines, tints, palette):
     step = FONT_SIZE * LINE_HEIGHT
-    height = round(len(lines) * step, 2)
+    width = round(COLS * FONT_SIZE * ADVANCE_WIDTH + 2 * PAD, 2)
+    height = round(len(lines) * step + 2 * PAD, 2)
     font_b64 = base64.b64encode(subset_font()).decode("ascii")
 
     # Literal per-row delays. "not all and" rather than the Media Queries 4 form
@@ -137,6 +187,10 @@ def build_svg(lines):
     delays = "".join(
         f".r{i}{{animation-delay:{i * REVEAL_STAGGER:.3f}s}}" for i in range(len(lines))
     )
+    colours = "".join(
+        f".c{k}{{fill:#{r:02x}{g:02x}{b:02x}}}" for k, (r, g, b) in enumerate(palette)
+    )
+    tint_delay = (len(lines) - 1) * REVEAL_STAGGER + REVEAL_DUR + TINT_PAUSE
 
     out = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
@@ -148,21 +202,29 @@ def build_svg(lines):
         "}",
         f"text{{font-family:'{FONT_FAMILY}',monospace;font-size:{FONT_SIZE}px;"
         f"white-space:pre;fill:{FILL};opacity:1}}",
+        f"{colours}"
         "@keyframes reveal{"
         "from{opacity:0;clip-path:inset(0 100% 0 0)}"
         "to{opacity:1;clip-path:inset(0 0 0 0)}"
         "}",
         "@media not all and (prefers-reduced-motion: reduce){"
-        f"text{{opacity:0;animation:reveal {REVEAL_DUR}s ease-out forwards}}"
+        f"text{{opacity:0;animation:reveal {REVEAL_DUR}s linear forwards}}"
         f"{delays}"
+        f"@keyframes tint{{from{{fill:{FILL}}}}}"
+        f"tspan{{animation:tint {TINT_DUR}s ease-in-out {tint_delay:.2f}s both}}"
         "}",
         "</style>",
+        f'<rect width="{width}" height="{height}" rx="{RADIUS}" fill="{GROUND}"/>',
     ]
-    for i, line in enumerate(lines):
-        y = round(i * step, 2)
+    for i, (line, tint) in enumerate(zip(lines, tints)):
+        y = round(PAD + i * step, 2)
+        body = "".join(
+            f'<tspan class="c{t}">{escape(text)}</tspan>' if t >= 0 else escape(text)
+            for t, text in tint_runs(line, tint)
+        )
         out.append(
-            f'<text class="r{i}" x="0" y="{y}" xml:space="preserve" '
-            f'dominant-baseline="hanging">{escape(line)}</text>'
+            f'<text class="r{i}" x="{PAD}" y="{y}" xml:space="preserve" '
+            f'dominant-baseline="hanging">{body}</text>'
         )
     out.append("</svg>")
     return "\n".join(out) + "\n"
@@ -174,9 +236,9 @@ def main():
     ap.add_argument("dest", nargs="?", default="ascii.svg", type=Path)
     args = ap.parse_args()
 
-    gray, bbox = load_subject(args.source)
-    lines = to_rows(gray)
-    args.dest.write_text(build_svg(lines), encoding="utf-8")
+    gray, rgb, alpha, bbox = load_subject(args.source)
+    lines, tints, palette = to_rows(gray, rgb, alpha)
+    args.dest.write_text(build_svg(lines, tints, palette), encoding="utf-8")
 
     w, h = gray.size
     print(f"{args.source} -> {args.dest}")
