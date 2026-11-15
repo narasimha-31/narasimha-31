@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  Data analyst in Houston. I turn messy, multi-source data into numbers people can trust, and I build the pipeline underneath when a project needs one.
+  Data analyst in Houston. I turn messy, multi-source data into numbers a business can act on, and I build the pipeline underneath when a project needs one.
 </p>
 
 <img src="hd-stack.svg" height="40" alt="Tech stack"/>
