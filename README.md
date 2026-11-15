@@ -1,4 +1,4 @@
-<img width="100%" src="data-pipeline.svg" alt="Narasimha Royal. Data analysis and data engineering, from messy data to numbers people can trust."/>
+<img width="100%" src="data-pipeline.svg" alt="Narasimha Royal. Data analysis and data engineering, from messy data to numbers a business can act on."/>
 
 <p align="center">
   <img src="ascii.svg" width="498" alt="ASCII portrait"/>
