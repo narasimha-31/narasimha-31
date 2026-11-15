@@ -3,9 +3,7 @@
 
     python scripts/headings.py
 
-One file per section, lowercase monospace with a gradient fill and a short
-rule beneath. These also stand in for the capsule-render divider bars the
-README used to load from a third party.
+One file per section: lowercase monospace with a short accent rule beneath.
 """
 
 import sys
@@ -24,10 +22,10 @@ WEIGHT = 800
 PAD_X = 2          # breathing room so the gradient does not clip the first stem
 RULE_GAP = 9       # baseline to rule
 RULE_HEIGHT = 3
+RULE_WIDTH = 34
 HEIGHT = 46
 
 SECTIONS = [
-    ("hd-about", "about me"),
     ("hd-stack", "tech stack"),
     ("hd-projects", "projects"),
     ("hd-stats", "stats & activity"),
@@ -43,18 +41,14 @@ def build(text):
     return (
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{HEIGHT}" '
         f'viewBox="0 0 {width} {HEIGHT}" role="img" aria-label="{escape(text)}">'
-        "<defs>"
-        f'{palette.gradient_def("hg")}'
-        "</defs>"
         "<style>"
         f"{face.css()}"
         f"text{{font-family:{face.stack()};font-size:{FONT_SIZE}px;font-weight:{WEIGHT};"
         f"letter-spacing:0}}"
         "</style>"
-        f'<text x="{PAD_X}" y="{baseline}" fill="url(#hg)">{escape(text)}</text>'
-        f'<rect x="{PAD_X}" y="{rule_y}" width="{round(width - PAD_X * 2, 2)}" '
-        f'height="{RULE_HEIGHT}" rx="{RULE_HEIGHT / 2}" fill="url(#hg)" '
-        f'opacity="{palette.RULE_OPACITY}"/>'
+        f'<text x="{PAD_X}" y="{baseline}" fill="{palette.INK}">{escape(text)}</text>'
+        f'<rect x="{PAD_X}" y="{rule_y}" width="{RULE_WIDTH}" '
+        f'height="{RULE_HEIGHT}" rx="{RULE_HEIGHT / 2}" fill="{palette.BLUE}"/>'
         "</svg>\n"
     )
 

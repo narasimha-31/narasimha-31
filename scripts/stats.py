@@ -43,7 +43,6 @@ LOGIN = "narasimha-31"
 UA = "narasimha-31-profile-stats"
 
 CARD_W = 880           # full width; the README stacks these rather than pairing them
-RAMP = ":+#@"          # quiet to loud, one character per day
 TOP_LANGS = 6
 
 ANIM_DUR = 0.5
@@ -368,7 +367,7 @@ def _lerp(a, b, t):
 def gradient_samples(n):
     """n colors spread across the brand gradient, so series stay on-palette."""
     if n == 1:
-        return [palette.PURPLE]
+        return [palette.BLUE]
     stops = palette.GRADIENT
     out = []
     for i in range(n):
@@ -561,7 +560,7 @@ def render_streak(s):
         )
 
     rule = (
-        f'<rect x="0" y="116" width="{CARD_W}" height="2" rx="1" fill="{palette.PURPLE}" '
+        f'<rect x="0" y="116" width="{CARD_W}" height="2" rx="1" fill="{palette.BLUE}" '
         f'opacity="{palette.GRID_OPACITY}"/>'
     )
     return (
@@ -577,91 +576,75 @@ def render_streak(s):
 # --------------------------------------------------------------------------
 
 def render_year(s):
-    """One character per day, laid out the way GitHub lays out its calendar:
-    columns are weeks, rows are days of the week. No reveal animation here --
-    it sits far enough down the README that it would finish before anyone
-    scrolled to it."""
+    """A square per day, columns are weeks, laid out like GitHub's calendar."""
     days = s.days
     if not days:
         raise SystemExit("no contribution days collected")
 
     nonzero = sorted(d.count for d in days if d.count > 0)
-    if nonzero:
-        cuts = [nonzero[int(len(nonzero) * q)] for q in (0.5, 0.8, 0.95)]
-    else:
-        cuts = [1, 2, 3]
+    cuts = [nonzero[int(len(nonzero) * q)] for q in (0.5, 0.8, 0.95)] if nonzero else [1, 2, 3]
+    levels = (0.35, 0.55, 0.78, 1.0)
 
-    def glyph(count):
-        if count <= 0:
-            return RAMP[0]
+    def level(count):
         for i, cut in enumerate(cuts):
             if count <= cut:
-                return RAMP[min(i + 1, len(RAMP) - 1)]
-        return RAMP[-1]
+                return levels[i]
+        return levels[-1]
 
-    first = days[0].day
-    offset = (first.weekday() + 1) % 7          # Sunday is row 0, matching GitHub
+    offset = (days[0].day.weekday() + 1) % 7    # Sunday is row 0
     cols = (offset + len(days) + 6) // 7
-    grid = [[None] * cols for _ in range(7)]
-    for i, entry in enumerate(days):
-        grid[(i + offset) % 7][(i + offset) // 7] = entry
 
-    fs, lh = 14, 1.10
-    cw = fs * 0.600
-    gutter, top = 30, 30
-    width = round(gutter + cols * cw + 4, 2)
-    height = round(top + 7 * fs * lh + 8, 2)
+    width, gutter, top = 830, 34, 46
+    pitch = (width - gutter) / cols
+    cell = round(pitch - 3.5, 2)
+    height = round(top + 7 * pitch + 24, 2)
+    mono = repr(FaceSet(500)[500].stack())
 
-    faces = FaceSet(400, 500)
-    faces[400].use(RAMP)
+    faces = FaceSet(500, 600)
+    title = f"{s.total_contributions:,} contributions in the last year"
+    faces[600].use(title)
+    faces[500].use("less", "more", "Mon", "Wed", "Fri")
+    small = f'fill="{palette.DIM}" font-family={mono} font-size="10.5" font-weight="500"'
+    empty = f'fill="{palette.GRID}" opacity="0.16"'
 
-    body, months = [], []
+    body = [
+        f'<text x="0" y="14" fill="{palette.INK}" font-family={faces[600].stack()!r} '
+        f'font-size="12" font-weight="600">{title}</text>'
+    ]
+
     seen = set()
-    for c in range(cols):
-        for r in range(7):
-            entry = grid[r][c]
-            if entry and (entry.day.year, entry.day.month) not in seen and entry.day.day <= 7:
-                seen.add((entry.day.year, entry.day.month))
-                label = entry.day.strftime("%b")
-                faces[500].use(label)
-                months.append(
-                    f'<text x="{gutter + c * cw:.1f}" y="18" fill="{palette.DIM}" '
-                    f'font-family={faces[500].stack()!r} font-size="10" '
-                    f'font-weight="500">{escape(label)}</text>'
-                )
-            break
+    for i, entry in enumerate(days):
+        c, r = divmod(i + offset, 7)
+        x, y = round(gutter + c * pitch, 2), round(top + r * pitch, 2)
+        fill = f'fill="{palette.BLUE}" opacity="{level(entry.count)}"' if entry.count else empty
+        body.append(f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="2.5" {fill}/>')
 
-    for r, name in enumerate(("", "Mon", "", "Wed", "", "Fri", "")):
-        if name:
-            faces[500].use(name)
-            y = top + r * fs * lh + fs * 0.8
-            body.append(
-                f'<text x="0" y="{y:.1f}" fill="{palette.DIM}" '
-                f'font-family={faces[500].stack()!r} font-size="9" '
-                f'font-weight="500">{name}</text>'
-            )
+        key = (entry.day.year, entry.day.month)
+        if entry.day.day == 1 and key not in seen and c < cols - 1:
+            seen.add(key)
+            label = entry.day.strftime("%b")
+            faces[500].use(label)
+            mx = x if r == 0 else round(x + pitch, 2)
+            body.append(f'<text x="{mx}" y="{top - 9}" {small}>{label}</text>')
 
-    for r in range(7):
-        row = "".join(glyph(grid[r][c].count) if grid[r][c] else " " for c in range(cols))
-        y = round(top + r * fs * lh, 2)
-        body.append(
-            f'<text x="{gutter}" y="{y}" xml:space="preserve" dominant-baseline="hanging" '
-            f'fill="{palette.PURPLE}" font-family={faces[400].stack()!r} '
-            f'font-size="{fs}px" font-weight="400">{escape(row)}</text>'
-        )
+    for r, name in ((1, "Mon"), (3, "Wed"), (5, "Fri")):
+        body.append(f'<text x="0" y="{top + r * pitch + cell * 0.8:.1f}" {small}>{name}</text>')
 
-    legend = f"{RAMP[0]} none   {RAMP[1]} low   {RAMP[2]} mid   {RAMP[3]} high"
-    faces[500].use(legend)
+    ly = round(top + 7 * pitch + 6, 2)
+    lx = width - 5 * (cell + 3.5) - 78
+    body.append(f'<text x="{lx:.1f}" y="{ly + cell * 0.8:.1f}" {small}>less</text>')
+    for i, op in enumerate((None,) + levels):
+        x = round(lx + 36 + i * (cell + 3.5), 2)
+        fill = f'fill="{palette.BLUE}" opacity="{op}"' if op else empty
+        body.append(f'<rect x="{x}" y="{ly}" width="{cell}" height="{cell}" rx="2.5" {fill}/>')
     body.append(
-        f'<text x="{gutter}" y="{height - 2:.1f}" xml:space="preserve" fill="{palette.DIM}" '
-        f'font-family={faces[500].stack()!r} font-size="9" font-weight="500">{escape(legend)}</text>'
+        f'<text x="{width}" y="{ly + cell * 0.8:.1f}" text-anchor="end" {small}>more</text>'
     )
 
-    label = f"Contribution activity for the last {len(days)} days"
     return (
-        svg_open(width, height + 6, label)
+        svg_open(width, height, f"{title}, one square per day")
         + f"<style>{faces.css()}</style>"
-        + "".join(months) + "".join(body)
+        + "".join(body)
         + "</svg>\n"
     )
 

@@ -34,15 +34,15 @@ AUTOCONTRAST_CUTOFF = 1  # percent clipped off each end of the histogram
 # --- Reveal animation -------------------------------------------------------
 # Per row, not per character: 70 columns x 29 rows would be 2030 elements.
 
-REVEAL_DUR = 0.11       # seconds for one row to wipe in
-REVEAL_STAGGER = 0.11   # seconds between consecutive row starts
+REVEAL_DUR = 0.06       # seconds for one row to wipe in
+REVEAL_STAGGER = 0.06   # seconds between consecutive row starts
 
 # Rows draw in white, then the photo's own colours fade in.
 TINT_COLORS = 10        # palette size
 TINT_FLOOR = 0.62       # darkest value a colour may have, so hair stays readable on the panel
 TINT_SATURATION = 1.25
-TINT_DUR = 1.4
-TINT_PAUSE = 0.3        # gap between the last row and the fade
+TINT_DUR = 0.9
+TINT_PAUSE = 0.15       # gap between the last row and the fade
 
 # --- Typography -------------------------------------------------------------
 # JetBrains Mono advances 600/1000 em per glyph. Rows must be squashed by
