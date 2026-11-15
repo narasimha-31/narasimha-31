@@ -1,4 +1,4 @@
-<img width="100%" src="data-pipeline.svg" alt="Narasimha Royal, Data Analyst. From messy data to trusted decisions."/>
+<img width="100%" src="data-pipeline.svg" alt="Narasimha Royal. Data analysis and data engineering, from messy data to numbers people can trust."/>
 
 <p align="center">
   <img src="ascii.svg" width="498" alt="ASCII portrait"/>
@@ -20,7 +20,8 @@
 |---|---|
 | **Languages** | `SQL` `Python` `DAX` |
 | **Analytics & BI** | `Power BI` `Excel` `pandas` `NumPy` `Tableau` |
-| **Databases & Cloud** | `PostgreSQL` `Snowflake` `BigQuery` |
+| **Databases & Cloud** | `PostgreSQL` `SQL Server` `Snowflake` `BigQuery` |
+| **ERP** | `SAP S/4HANA` |
 | **Data Engineering** | `Airflow` `dbt` `Kafka` `Great Expectations` `Docker` |
 | **Geospatial** | `PostGIS` `GeoPandas` `QGIS` |
 
@@ -59,8 +60,6 @@
 
 <img width="100%" src="langs.svg" alt="Top languages by bytes and by repository count"/>
 
-<p align="center">
-  <img src="year.svg" alt="Contribution activity for the last year, one character per day"/>
-</p>
+<img width="100%" src="year.svg" alt="Contribution calendar for the last year, one square per day"/>
 
 <img width="100%" src="gitartwork.svg" alt="Contribution graph artwork"/>
