@@ -20,7 +20,7 @@ TARGET = Path(__file__).parent.parent / "data-pipeline.svg"
 
 W, H = 1060, 262
 NAME = "NARASIMHA ROYAL"
-TAGLINE = "Data analysis and data engineering, from messy data to numbers people can trust."
+TAGLINE = "Data analysis and data engineering, from messy data to numbers a business can act on."
 
 STEPS = ["Sources", "Load", "Check", "Model", "Analyze", "Report"]
 
@@ -58,7 +58,7 @@ def build():
     parts = [
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" '
         f'height="{H}" fill="none" role="img" aria-label="Narasimha Royal. Data analysis '
-        f'and data engineering, from messy data to numbers people can trust. '
+        f'and data engineering, from messy data to numbers a business can act on. '
         f'{" to ".join(STEPS)}. {notes}.">',
         f"<style>{faces.css()}</style>",
         f'<text x="{MARGIN}" y="58" fill="{palette.BLUE}" font-size="46" font-weight="800" '
